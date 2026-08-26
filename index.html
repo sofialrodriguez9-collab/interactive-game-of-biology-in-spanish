@@ -55,7 +55,7 @@ header p {
 
 
 /* =========================
-   CONTENEDOR
+   CONTENEDOR PRINCIPAL
 ========================= */
 
 main {
@@ -89,7 +89,7 @@ main {
 
 
 /* =========================
-   CÓMO SE JUEGA
+   ¿CÓMO SE JUEGA?
 ========================= */
 
 .instructions {
@@ -120,13 +120,11 @@ main {
     color: #9a2861;
 
     font-weight: bold;
-
-    margin-bottom: 8px;
 }
 
 
 /* =========================
-   ETAPA ACTUAL
+   INFORMACIÓN DE LA ETAPA
 ========================= */
 
 #stageCard {
@@ -232,7 +230,7 @@ main {
 
 
 /* =========================
-   MENSAJE
+   FEEDBACK
 ========================= */
 
 #feedback {
@@ -251,6 +249,32 @@ main {
 
 .hidden {
     display: none !important;
+}
+
+.main-button {
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 13px 20px;
+
+    background: #e94f9d;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.main-button:hover {
+    background: #d63b89;
+
+    transform: translateY(-2px);
 }
 
 
@@ -346,51 +370,40 @@ main {
 
 
 /* =========================
-   BOTONES GENERALES
-========================= */
-
-.main-button {
-    border: none;
-
-    border-radius: 14px;
-
-    padding: 13px 20px;
-
-    background: #e94f9d;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.main-button:hover {
-    background: #d63b89;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================
    FOOTER
 ========================= */
 
 footer {
     text-align: center;
-
     color: #aaaaaa;
+    padding: 25px 20px 35px;
+}
 
-    padding: 25px;
+footer p {
+    margin: 0;
+    font-size: 14px;
 }
 
 
 /* =========================
-   CELULAR
+   LOGO DE LA ESCUELA
+========================= */
+
+.school-logo {
+    display: block;
+
+    width: 60px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    margin: 12px auto 0;
+}
+
+
+/* =========================
+   CELULARES
 ========================= */
 
 @media (max-width: 650px) {
@@ -452,7 +465,7 @@ footer {
 
 
 <!-- =========================
-     1. CÓMO SE JUEGA
+     CÓMO SE JUEGA
 ========================= -->
 
 <section class="card">
@@ -534,11 +547,9 @@ footer {
 
 
 
-<!-- ==================================================
-     2. INFORMACIÓN DE LA ETAPA
-     
-     ESTA ES LA PRIMERA COSA QUE CAMBIA
-================================================== -->
+<!-- =========================
+     INFORMACIÓN DE LA ETAPA
+========================= -->
 
 <section
     class="card"
@@ -553,26 +564,18 @@ footer {
     </span>
 
 
-    <h2
-        id="stageTitle"
-    >
-    </h2>
+    <h2 id="stageTitle"></h2>
 
 
-    <p
-        id="stageInfo"
-    >
-    </p>
+    <p id="stageInfo"></p>
 
 </section>
 
 
 
-<!-- ==================================================
-     3. PREGUNTA
-     
-     ESTÁ DIRECTAMENTE DESPUÉS DE LA INFORMACIÓN
-================================================== -->
+<!-- =========================
+     PREGUNTA
+========================= -->
 
 <section
     class="card"
@@ -584,22 +587,13 @@ footer {
     </h2>
 
 
-    <p
-        id="question"
-    >
-    </p>
+    <p id="question"></p>
 
 
-    <div
-        id="answers"
-    >
-    </div>
+    <div id="answers"></div>
 
 
-    <p
-        id="feedback"
-    >
-    </p>
+    <p id="feedback"></p>
 
 
     <button
@@ -613,13 +607,9 @@ footer {
 
 
 
-<!-- ==================================================
-     4. LÍNEA DEL TIEMPO
-     
-     IMPORTANTE:
-     DESPUÉS DE ESTA SECCIÓN NO SE MUESTRA
-     LA INFORMACIÓN DE LA ETAPA
-================================================== -->
+<!-- =========================
+     LÍNEA DEL TIEMPO
+========================= -->
 
 <section class="card">
 
@@ -630,10 +620,7 @@ footer {
 
     <div class="progress-container">
 
-        <div
-            id="progressBar"
-        >
-        </div>
+        <div id="progressBar"></div>
 
     </div>
 
@@ -641,15 +628,14 @@ footer {
     <div
         class="timeline"
         id="timeline"
-    >
-    </div>
+    ></div>
 
 </section>
 
 
 
 <!-- =========================
-     5. RESULTADO
+     RESULTADO
 ========================= -->
 
 <section
@@ -662,12 +648,10 @@ footer {
     </h2>
 
 
-    <p id="score">
-    </p>
+    <p id="score"></p>
 
 
-    <p id="resultText">
-    </p>
+    <p id="resultText"></p>
 
 
     <button
@@ -682,7 +666,7 @@ footer {
 
 
 <!-- =========================
-     6. DATO FINAL
+     DATO FINAL
 ========================= -->
 
 <section class="card">
@@ -704,9 +688,28 @@ footer {
 </main>
 
 
+
+<!-- =========================
+     PIE DE PÁGINA
+========================= -->
+
 <footer>
 
-    Hecho para aprender jugando · Historia de la evolución 🧬
+    <p>
+        Hecho para aprender jugando · Historia de la evolución 🧬
+    </p>
+
+
+    <!--
+        PONÉ TU LOGO EN LA MISMA CARPETA
+        Y LLAMALO: logo-escuela.png
+    -->
+
+    <img
+        src="logo-escuela.png"
+        alt="Logo de la escuela"
+        class="school-logo"
+    >
 
 </footer>
 
@@ -715,7 +718,7 @@ footer {
 <script>
 
 /* =====================================================
-   DATOS DEL JUEGO
+   ETAPAS
 ===================================================== */
 
 const stages = [
@@ -930,7 +933,7 @@ let hasAnswered = false;
 
 
 /* =====================================================
-   ELEMENTOS HTML
+   ELEMENTOS
 ===================================================== */
 
 const stageNumber =
@@ -1084,7 +1087,7 @@ function updateTimeline() {
 
 
 /* =====================================================
-   MOSTRAR TODA LA ETAPA
+   MOSTRAR ETAPA
 ===================================================== */
 
 function showStage() {
@@ -1097,9 +1100,7 @@ function showStage() {
         false;
 
 
-    /* =========================
-       INFORMACIÓN
-    ========================= */
+    /* INFORMACIÓN */
 
     stageNumber.textContent =
         `Etapa ${currentStage + 1} de ${stages.length}`;
@@ -1113,17 +1114,13 @@ function showStage() {
         stage.info;
 
 
-    /* =========================
-       PREGUNTA
-    ========================= */
+    /* PREGUNTA */
 
     question.textContent =
         stage.question;
 
 
-    /* =========================
-       RESPUESTAS
-    ========================= */
+    /* RESPUESTAS */
 
     answers.innerHTML = "";
 
@@ -1147,9 +1144,7 @@ function showStage() {
                 "click",
                 function() {
 
-                    checkAnswer(
-                        index
-                    );
+                    checkAnswer(index);
 
                 }
             );
@@ -1163,10 +1158,6 @@ function showStage() {
     );
 
 
-    /* =========================
-       LIMPIAR FEEDBACK
-    ========================= */
-
     feedback.textContent =
         "";
 
@@ -1175,10 +1166,6 @@ function showStage() {
         "hidden"
     );
 
-
-    /* =========================
-       TIMELINE
-    ========================= */
 
     updateTimeline();
 
@@ -1191,9 +1178,7 @@ function showStage() {
 
 function checkAnswer(selected) {
 
-    if (
-        hasAnswered
-    ) {
+    if (hasAnswered) {
 
         return;
 
@@ -1221,8 +1206,6 @@ function checkAnswer(selected) {
                 true;
 
 
-            /* MARCAR CORRECTA */
-
             if (
                 index === stage.correct
             ) {
@@ -1233,8 +1216,6 @@ function checkAnswer(selected) {
 
             }
 
-
-            /* MARCAR INCORRECTA */
 
             if (
                 index === selected &&
@@ -1250,10 +1231,6 @@ function checkAnswer(selected) {
         }
     );
 
-
-    /* =========================
-       RESULTADO
-    ========================= */
 
     if (
         selected === stage.correct
@@ -1275,18 +1252,13 @@ function checkAnswer(selected) {
     }
 
 
-    /* =========================
-       BOTÓN
-    ========================= */
-
     nextButton.classList.remove(
         "hidden"
     );
 
 
     if (
-        currentStage ===
-        stages.length - 1
+        currentStage === stages.length - 1
     ) {
 
         nextButton.textContent =
@@ -1313,10 +1285,6 @@ function goToNextStage() {
     currentStage++;
 
 
-    /* =========================
-       TERMINAR JUEGO
-    ========================= */
-
     if (
         currentStage >= stages.length
     ) {
@@ -1328,18 +1296,8 @@ function goToNextStage() {
     }
 
 
-    /* =========================
-       MOSTRAR NUEVA ETAPA
-    ========================= */
-
     showStage();
 
-
-    /*
-       SUBIMOS DIRECTAMENTE
-       A LA INFORMACIÓN DE LA
-       NUEVA ETAPA.
-    */
 
     document
         .getElementById("stageCard")
@@ -1355,7 +1313,7 @@ function goToNextStage() {
 
 
 /* =====================================================
-   MOSTRAR RESULTADO
+   RESULTADO
 ===================================================== */
 
 function showResult() {
@@ -1449,7 +1407,7 @@ function restartGame() {
 
 
 /* =====================================================
-   EVENTOS
+   BOTONES
 ===================================================== */
 
 nextButton.addEventListener(
@@ -1465,7 +1423,7 @@ restartButton.addEventListener(
 
 
 /* =====================================================
-   INICIAR JUEGO
+   INICIAR
 ===================================================== */
 
 createTimeline();
