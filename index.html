@@ -36,11 +36,13 @@ body {
   color: var(--ink);
 }
 
+/* HEADER */
+
 header {
   padding: 40px 20px;
   text-align: center;
   background: linear-gradient(135deg, #e94f9d, #7657c8);
-  color: #ffffff;
+  color: white;
 }
 
 header h1 {
@@ -55,6 +57,8 @@ header p {
   line-height: 1.5;
 }
 
+/* CONTENIDO */
+
 main {
   width: 100%;
   max-width: 1050px;
@@ -63,7 +67,7 @@ main {
 }
 
 .card {
-  background: #ffffff;
+  background: white;
   color: #171717;
   border-radius: 22px;
   padding: 24px;
@@ -80,6 +84,8 @@ h2 {
   color: #6846b7;
 }
 
+/* BOTONES */
+
 button {
   border: 0;
   border-radius: 14px;
@@ -88,18 +94,14 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   cursor: pointer;
-  background-color: #e94f9d !important;
-  color: white !important;
-  text-align: center !important;
-  line-height: normal !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  background: #e94f9d;
+  color: white;
+  text-align: center;
   transition: transform .2s, filter .2s;
 }
 
 button:hover {
-  background-color: #d63b89 !important;
-  color: white !important;
+  background: #d63b89;
   transform: translateY(-2px);
   filter: brightness(1.08);
 }
@@ -108,19 +110,8 @@ button:active {
   transform: translateY(1px);
 }
 
-button.secondary {
-  background-color: #eee8fa !important;
-  color: #4e3d86 !important;
-}
-
-button.correct {
-  background-color: #56a66b !important;
-  color: white !important;
-}
-
-button.wrong {
-  background-color: #d95757 !important;
-  color: white !important;
+button:disabled {
+  cursor: default;
 }
 
 .choice {
@@ -128,20 +119,33 @@ button.wrong {
   width: 100%;
   text-align: left;
   margin: 10px 0;
-  background: #ffffff !important;
-  color: #171717 !important;
+  background: white;
+  color: #171717;
   border: 2px solid #e5e5e5;
 }
 
 .choice:hover {
-  background: #f5f5f5 !important;
-  color: #171717 !important;
+  background: #f5f5f5;
+  color: #171717;
+}
+
+.choice.correct {
+  background: #56a66b !important;
+  color: white !important;
+  border-color: #56a66b;
+}
+
+.choice.wrong {
+  background: #d95757 !important;
+  color: white !important;
+  border-color: #d95757;
 }
 
 .choice:disabled {
-  cursor: default;
   transform: none;
 }
+
+/* GRID */
 
 .grid {
   display: grid;
@@ -149,11 +153,14 @@ button.wrong {
   gap: 15px;
 }
 
+/* EVENTOS */
+
 .event {
   border: 2px solid #e5e5e5;
   border-radius: 18px;
   padding: 18px;
-  background: #ffffff;
+  background: white;
+  transition: .3s;
 }
 
 .event strong {
@@ -164,6 +171,17 @@ button.wrong {
 .event h3 {
   margin-bottom: 8px;
 }
+
+.event.unlocked {
+  border-color: #e94f9d;
+}
+
+.event.current {
+  border-color: #7657c8;
+  box-shadow: 0 0 0 3px rgba(118,87,200,.12);
+}
+
+/* PROGRESO */
 
 .progress {
   height: 12px;
@@ -177,8 +195,10 @@ button.wrong {
   height: 100%;
   width: 0;
   background: linear-gradient(90deg, #e94f9d, #7657c8);
-  transition: .4s;
+  transition: width .4s ease;
 }
+
+/* UTILIDADES */
 
 .hidden {
   display: none !important;
@@ -205,15 +225,22 @@ button.wrong {
   color: #665d6d;
 }
 
+.feedback {
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+#nextButton {
+  margin-top: 15px;
+}
+
 footer {
   text-align: center;
   padding: 25px;
   color: #aaaaaa;
 }
 
-#nextButton {
-  margin-top: 12px;
-}
+/* CELULAR */
 
 @media (max-width: 600px) {
 
@@ -258,6 +285,7 @@ footer {
 </style>
 </head>
 
+
 <body>
 
 <header>
@@ -274,6 +302,7 @@ footer {
 
 <main>
 
+<!-- INTRODUCCIÓN -->
 
 <section class="card">
 
@@ -291,27 +320,35 @@ footer {
       <span class="badge">1</span>
       <b>Descubrí</b>
       <br>
-      <span class="small">Conocé el contexto histórico.</span>
+      <span class="small">
+        Conocé el contexto histórico.
+      </span>
     </div>
 
     <div>
       <span class="badge">2</span>
       <b>Elegí</b>
       <br>
-      <span class="small">Respondé una pregunta.</span>
+      <span class="small">
+        Respondé una pregunta.
+      </span>
     </div>
 
     <div>
       <span class="badge">3</span>
       <b>Avanzá</b>
       <br>
-      <span class="small">Desbloqueá la siguiente etapa.</span>
+      <span class="small">
+        Desbloqueá la siguiente etapa.
+      </span>
     </div>
 
   </div>
 
 </section>
 
+
+<!-- LÍNEA DEL TIEMPO -->
 
 <section class="card">
 
@@ -326,9 +363,13 @@ footer {
 </section>
 
 
+<!-- ETAPA -->
+
 <section class="card" id="game">
 
-  <h2 id="stageTitle">Comenzá el viaje</h2>
+  <h2 id="stageTitle">
+    Comenzá el viaje
+  </h2>
 
   <div id="stageText">
 
@@ -337,7 +378,7 @@ footer {
       la historia de las ideas sobre la evolución.
     </p>
 
-    <button onclick="startGame()">
+    <button id="startButton">
       🚀 Empezar
     </button>
 
@@ -345,6 +386,8 @@ footer {
 
 </section>
 
+
+<!-- PREGUNTA -->
 
 <section class="card hidden" id="quiz">
 
@@ -354,15 +397,21 @@ footer {
 
   <div id="choices"></div>
 
-  <p id="feedback"></p>
+  <p id="feedback" class="feedback"></p>
 
-  <!-- ESTE ES EL ÚNICO BOTÓN DE SIGUIENTE -->
-  <button id="nextButton" class="hidden" onclick="nextStage()">
+  <!--
+    ESTE ES EL ÚNICO BOTÓN DE SIGUIENTE
+    NO SE CREA NINGÚN OTRO DESDE JAVASCRIPT
+  -->
+
+  <button id="nextButton" class="hidden">
     ➡️ Siguiente etapa
   </button>
 
 </section>
 
+
+<!-- RESULTADO -->
 
 <section class="card hidden" id="result">
 
@@ -372,12 +421,14 @@ footer {
 
   <p id="resultText"></p>
 
-  <button onclick="restart()">
+  <button id="restartButton">
     🔄 Jugar de nuevo
   </button>
 
 </section>
 
+
+<!-- DATO FINAL -->
 
 <section class="card">
 
@@ -391,19 +442,19 @@ footer {
 
 </section>
 
-
 </main>
 
 
 <footer>
-
   Hecho para aprender jugando · Historia de la evolución 🧬
-
 </footer>
 
 
 <script>
 
+/* =========================================================
+   DATOS DEL JUEGO
+   ========================================================= */
 
 const stages = [
 
@@ -570,333 +621,517 @@ const stages = [
 ];
 
 
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
 let current = -1;
-
 let score = 0;
-
 let answered = false;
 
 
+/* =========================================================
+   ELEMENTOS
+   ========================================================= */
+
+const timeline = document.getElementById("timeline");
+const bar = document.getElementById("bar");
+
+const game = document.getElementById("game");
+const quiz = document.getElementById("quiz");
+const result = document.getElementById("result");
+
+const stageTitle = document.getElementById("stageTitle");
+const stageText = document.getElementById("stageText");
+
+const question = document.getElementById("question");
+const choices = document.getElementById("choices");
+const feedback = document.getElementById("feedback");
+
+const nextButton = document.getElementById("nextButton");
+
+const startButton = document.getElementById("startButton");
+const restartButton = document.getElementById("restartButton");
+
+
+/* =========================================================
+   LÍNEA DEL TIEMPO
+   ========================================================= */
 
 function renderTimeline() {
 
-  const t = document.getElementById("timeline");
+  timeline.innerHTML = "";
 
-  t.innerHTML = stages.map((s, i) => `
+  stages.forEach((stage, index) => {
 
-    <div class="event" id="event${i}">
+    const event = document.createElement("div");
 
-      <strong>${s.year}</strong>
+    event.className = "event";
+    event.id = "event" + index;
 
-      <h3>${s.title}</h3>
+    event.innerHTML = `
+      <strong>${stage.year}</strong>
+
+      <h3>${stage.title}</h3>
 
       <p>
-        ${i === 0
+        ${index === 0
           ? "Disponible para comenzar."
           : "🔒 Desbloqueá esta etapa."
         }
       </p>
+    `;
 
-    </div>
+    timeline.appendChild(event);
 
-  `).join("");
+  });
 
 }
 
 
+/* =========================================================
+   ACTUALIZAR LÍNEA DEL TIEMPO
+   ========================================================= */
 
 function updateTimeline() {
 
-  stages.forEach((s, i) => {
+  stages.forEach((stage, index) => {
 
-    const e = document.getElementById("event" + i);
+    const event = document.getElementById("event" + index);
 
-    if (i <= current) {
+    if (index <= current) {
 
-      e.innerHTML = `
+      event.classList.add("unlocked");
 
-        <strong>${s.year}</strong>
+      event.innerHTML = `
+        <strong>${stage.year}</strong>
 
-        <h3>${s.title}</h3>
+        <h3>${stage.title}</h3>
 
         <p>✅ Desbloqueada</p>
-
       `;
 
+    }
+
+    if (index === current) {
+      event.classList.add("current");
     }
 
   });
 
 
-  document.getElementById("bar").style.width =
-    ((Math.max(current, 0) + 1) / stages.length * 100) + "%";
+  let progress = 0;
+
+  if (current >= 0) {
+    progress =
+      ((current + 1) / stages.length) * 100;
+  }
+
+  bar.style.width = progress + "%";
 
 }
 
 
+/* =========================================================
+   EMPEZAR
+   ========================================================= */
 
 function startGame() {
 
   current = 0;
-
   score = 0;
+  answered = false;
+
+  result.classList.add("hidden");
+
+  game.classList.remove("hidden");
+
+  quiz.classList.add("hidden");
 
   showStage();
 
 }
 
 
+/* =========================================================
+   MOSTRAR ETAPA
+   ========================================================= */
 
 function showStage() {
 
   answered = false;
 
-  const s = stages[current];
+  const stage = stages[current];
 
 
-  document.getElementById("stageTitle").textContent =
-    `${s.year} — ${s.title}`;
+  /* Actualizamos título */
+
+  stageTitle.textContent =
+    `${stage.year} — ${stage.title}`;
 
 
-  document.getElementById("stageText").innerHTML = `
+  /* Actualizamos información */
 
-    <p>${s.text}</p>
+  stageText.innerHTML = "";
 
-    <button onclick="showQuiz()">
-      🧠 Responder
-    </button>
+  const paragraph = document.createElement("p");
 
-  `;
+  paragraph.textContent = stage.text;
 
-
-  document.getElementById("quiz").classList.add("hidden");
-
-  document.getElementById("result").classList.add("hidden");
+  stageText.appendChild(paragraph);
 
 
-  // Ocultamos el botón único hasta responder
-  document.getElementById("nextButton").classList.add("hidden");
+  /* Creamos SOLO el botón de responder */
+
+  const answerButton = document.createElement("button");
+
+  answerButton.textContent = "🧠 Responder";
+
+  answerButton.addEventListener("click", showQuiz);
+
+  stageText.appendChild(answerButton);
+
+
+  /* Limpiamos completamente el cuestionario */
+
+  question.textContent = "";
+
+  choices.innerHTML = "";
+
+  feedback.textContent = "";
+
+  nextButton.classList.add("hidden");
+
+
+  /* Mostramos/ocultamos */
+
+  game.classList.remove("hidden");
+
+  quiz.classList.add("hidden");
+
+  result.classList.add("hidden");
 
 
   updateTimeline();
 
 
-  document.getElementById("game").scrollIntoView({
-
+  game.scrollIntoView({
     behavior: "smooth",
-
     block: "center"
-
   });
 
 }
 
 
+/* =========================================================
+   MOSTRAR PREGUNTA
+   ========================================================= */
 
 function showQuiz() {
 
-  const s = stages[current];
+  const stage = stages[current];
+
+  answered = false;
 
 
-  // Ocultar el mismo botón al comenzar una pregunta
-  document.getElementById("nextButton").classList.add("hidden");
+  /* Limpiamos TODO antes de cargar la pregunta */
+
+  choices.innerHTML = "";
+
+  feedback.textContent = "";
+
+  nextButton.classList.add("hidden");
 
 
-  document.getElementById("question").textContent = s.q;
+  /* Pregunta */
+
+  question.textContent = stage.q;
 
 
-  const c = document.getElementById("choices");
+  /* Opciones */
+
+  stage.options.forEach((option, index) => {
+
+    const button = document.createElement("button");
+
+    button.className = "choice";
+
+    button.textContent =
+      `${String.fromCharCode(65 + index)}. ${option}`;
+
+    button.addEventListener("click", function() {
+      answer(index);
+    });
+
+    choices.appendChild(button);
+
+  });
 
 
-  c.innerHTML = s.options.map((x, i) => `
-
-    <button
-      class="choice"
-      onclick="answer(${i})"
-    >
-
-      ${String.fromCharCode(65 + i)}. ${x}
-
-    </button>
-
-  `).join("");
+  quiz.classList.remove("hidden");
 
 
-  document.getElementById("feedback").textContent = "";
-
-
-  document.getElementById("quiz").classList.remove("hidden");
-
-
-  document.getElementById("quiz").scrollIntoView({
-
+  quiz.scrollIntoView({
     behavior: "smooth",
-
     block: "center"
-
   });
 
 }
 
 
+/* =========================================================
+   RESPONDER
+   ========================================================= */
 
-function answer(i) {
+function answer(selectedIndex) {
 
-  if (answered) return;
+  /* Evita responder dos veces */
 
+  if (answered) {
+    return;
+  }
 
   answered = true;
 
+  const stage = stages[current];
 
-  const s = stages[current];
-
-
-  const buttons = document.querySelectorAll(".choice");
-
-
-  buttons.forEach((b, n) => {
-
-    b.disabled = true;
+  const buttons =
+    choices.querySelectorAll(".choice");
 
 
-    if (n === s.answer) {
+  /* Bloqueamos todas las opciones */
 
-      b.classList.add("correct");
+  buttons.forEach((button, index) => {
 
+    button.disabled = true;
+
+
+    /* Marcamos la correcta */
+
+    if (index === stage.answer) {
+      button.classList.add("correct");
     }
 
 
-    if (n === i && i !== s.answer) {
+    /* Marcamos la incorrecta */
 
-      b.classList.add("wrong");
-
+    if (
+      index === selectedIndex &&
+      selectedIndex !== stage.answer
+    ) {
+      button.classList.add("wrong");
     }
 
   });
 
 
-  const f = document.getElementById("feedback");
+  /* Feedback */
 
-
-  if (i === s.answer) {
+  if (selectedIndex === stage.answer) {
 
     score++;
 
-
-    f.innerHTML =
-      "🎉 <b>¡Correcto!</b> " + s.why;
+    feedback.innerHTML =
+      "🎉 <b>¡Correcto!</b> " + stage.why;
 
   } else {
 
-    f.innerHTML =
-      "💭 <b>No exactamente.</b> " + s.why;
+    feedback.innerHTML =
+      "💭 <b>No exactamente.</b> " + stage.why;
 
   }
 
 
-  /*
-    IMPORTANTE:
+  /* =====================================================
+     IMPORTANTE:
+     ACÁ NO SE CREA NINGÚN BOTÓN.
+     
+     SOLO MOSTRAMOS EL ÚNICO #nextButton
+     QUE YA EXISTE EN EL HTML.
+     ===================================================== */
 
-    Acá ya NO creamos un botón nuevo.
+  if (current === stages.length - 1) {
 
-    Usamos siempre el mismo botón
-    que está en el HTML.
-  */
+    nextButton.textContent =
+      "🏆 Ver resultado";
 
-  const next = document.getElementById("nextButton");
+  } else {
 
+    nextButton.textContent =
+      "➡️ Siguiente etapa";
 
-  next.textContent =
-    current === stages.length - 1
-      ? "🏆 Ver resultado"
-      : "➡️ Siguiente etapa";
+  }
 
-
-  next.classList.remove("hidden");
+  nextButton.classList.remove("hidden");
 
 }
 
 
+/* =========================================================
+   SIGUIENTE ETAPA
+   ========================================================= */
 
 function nextStage() {
 
+  /* Ocultamos inmediatamente el botón */
+
+  nextButton.classList.add("hidden");
+
+
+  /* Pasamos a la siguiente */
+
   current++;
 
+
+  /* Si quedan etapas */
 
   if (current < stages.length) {
 
     showStage();
 
-  } else {
-
-    finish();
+    return;
 
   }
+
+
+  /* Si no quedan etapas */
+
+  finish();
 
 }
 
 
+/* =========================================================
+   FINAL
+   ========================================================= */
 
 function finish() {
 
-  document.getElementById("game").classList.add("hidden");
+  game.classList.add("hidden");
 
-  document.getElementById("quiz").classList.add("hidden");
+  quiz.classList.add("hidden");
 
-  document.getElementById("result").classList.remove("hidden");
+  result.classList.remove("hidden");
 
 
   document.getElementById("score").textContent =
     `${score} / ${stages.length} respuestas correctas`;
 
 
-  let msg;
+  let message;
 
 
   if (score === stages.length) {
 
-    msg =
+    message =
       "¡Excelente! Tenés una visión muy clara del recorrido histórico.";
 
-  } else if (score >= 5) {
+  }
 
-    msg =
+  else if (score >= 5) {
+
+    message =
       "¡Muy bien! Ya conocés los principales momentos del recorrido.";
 
-  } else {
+  }
 
-    msg =
+  else {
+
+    message =
       "¡Buen comienzo! Podés volver a jugar para reforzar los momentos históricos.";
 
   }
 
 
-  document.getElementById("resultText").textContent = msg;
+  document.getElementById("resultText").textContent =
+    message;
 
 
-  document.getElementById("result").scrollIntoView({
-
+  result.scrollIntoView({
     behavior: "smooth",
-
     block: "center"
-
   });
 
 }
 
 
+/* =========================================================
+   REINICIAR
+   ========================================================= */
 
 function restart() {
 
-  document.getElementById("game").classList.remove("hidden");
+  current = -1;
+  score = 0;
+  answered = false;
 
-  document.getElementById("result").classList.add("hidden");
 
-  document.getElementById("nextButton").classList.add("hidden");
+  /* Limpiamos el cuestionario */
 
-  startGame();
+  question.textContent = "";
+
+  choices.innerHTML = "";
+
+  feedback.textContent = "";
+
+  nextButton.classList.add("hidden");
+
+
+  /* Restauramos la línea del tiempo */
+
+  renderTimeline();
+
+  bar.style.width = "0%";
+
+
+  /* Volvemos a la pantalla inicial */
+
+  result.classList.add("hidden");
+
+  quiz.classList.add("hidden");
+
+  game.classList.remove("hidden");
+
+
+  stageTitle.textContent =
+    "Comenzá el viaje";
+
+
+  stageText.innerHTML = `
+    <p>
+      Tu misión es recorrer algunos de los momentos que cambiaron
+      la historia de las ideas sobre la evolución.
+    </p>
+  `;
+
+
+  /* Creamos el botón inicial */
+
+  const button = document.createElement("button");
+
+  button.textContent = "🚀 Empezar";
+
+  button.addEventListener("click", startGame);
+
+  stageText.appendChild(button);
 
 }
+
+
+/* =========================================================
+   EVENTOS DE LOS BOTONES FIJOS
+   ========================================================= */
+
+startButton.addEventListener("click", startGame);
+
+nextButton.addEventListener("click", nextStage);
+
+restartButton.addEventListener("click", restart);
+
+
+/* =========================================================
+   INICIO
+   ========================================================= */
 
 renderTimeline();
 
@@ -904,3 +1139,14 @@ renderTimeline();
 
 </body>
 </html>
+
+
+
+ 
+
+ 
+  
+ 
+
+
+ 
