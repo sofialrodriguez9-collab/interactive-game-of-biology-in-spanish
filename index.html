@@ -1,10 +1,7 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,18 +9,34 @@
 
 <style>
 
+/* =========================
+   COLORES
+========================= */
+
 :root {
+
   --bg: #171717;
   --card: #ffffff;
   --ink: #171717;
+
   --pink: #e94f9d;
   --pink-dark: #d63b89;
+
   --purple: #7657c8;
+
   --green: #56a66b;
   --red: #d95757;
+
   --border: #e5e5e5;
-  --shadow: 0 12px 30px rgba(0,0,0,.35);
+
+  --shadow:
+    0 12px 30px rgba(0,0,0,.35);
 }
+
+
+/* =========================
+   GENERAL
+========================= */
 
 * {
   box-sizing: border-box;
@@ -34,34 +47,62 @@ html {
 }
 
 body {
+
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background: var(--bg);
+
   color: var(--ink);
 }
 
 
 /* =========================
-   HEADER
+   ENCABEZADO
 ========================= */
 
 header {
+
   padding: 40px 20px;
+
   text-align: center;
-  background: linear-gradient(135deg, #e94f9d, #7657c8);
+
+  background:
+    linear-gradient(
+      135deg,
+      #e94f9d,
+      #7657c8
+    );
+
   color: white;
 }
 
 header h1 {
-  margin: 0 0 10px;
-  font-size: clamp(2rem, 5vw, 3.4rem);
+
+  margin:
+    0 0 10px;
+
+  font-size:
+    clamp(2rem, 5vw, 3.4rem);
 }
 
 header p {
-  margin: 0 auto;
-  max-width: 700px;
-  font-size: 1.08rem;
-  line-height: 1.5;
+
+  margin:
+    0 auto;
+
+  max-width:
+    700px;
+
+  font-size:
+    1.08rem;
+
+  line-height:
+    1.5;
 }
 
 
@@ -70,28 +111,53 @@ header p {
 ========================= */
 
 main {
+
   width: 100%;
-  max-width: 1050px;
-  margin: auto;
-  padding: 25px 16px 50px;
+
+  max-width:
+    1050px;
+
+  margin:
+    auto;
+
+  padding:
+    25px 16px 50px;
 }
 
 .card {
-  background: white;
-  color: var(--ink);
-  border-radius: 22px;
-  padding: 24px;
-  margin: 18px 0;
-  box-shadow: var(--shadow);
+
+  background:
+    var(--card);
+
+  color:
+    var(--ink);
+
+  border-radius:
+    22px;
+
+  padding:
+    24px;
+
+  margin:
+    18px 0;
+
+  box-shadow:
+    var(--shadow);
 }
 
 .card p {
-  line-height: 1.6;
+
+  line-height:
+    1.6;
 }
 
 h2 {
-  margin-top: 0;
-  color: #6846b7;
+
+  margin-top:
+    0;
+
+  color:
+    #6846b7;
 }
 
 
@@ -100,16 +166,35 @@ h2 {
 ========================= */
 
 button {
-  border: none;
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  cursor: pointer;
 
-  background: var(--pink);
-  color: white;
+  border:
+    none;
+
+  border-radius:
+    14px;
+
+  padding:
+    12px 18px;
+
+  font-size:
+    16px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight:
+    bold;
+
+  cursor:
+    pointer;
+
+  background:
+    var(--pink);
+
+  color:
+    white;
 
   transition:
     transform .2s,
@@ -118,17 +203,27 @@ button {
 }
 
 button:hover {
-  background: var(--pink-dark);
-  transform: translateY(-2px);
-  filter: brightness(1.08);
+
+  background:
+    var(--pink-dark);
+
+  transform:
+    translateY(-2px);
+
+  filter:
+    brightness(1.08);
 }
 
 button:active {
-  transform: translateY(1px);
+
+  transform:
+    translateY(1px);
 }
 
 button:disabled {
-  cursor: default;
+
+  cursor:
+    default;
 }
 
 
@@ -137,36 +232,66 @@ button:disabled {
 ========================= */
 
 .choice {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin: 10px 0;
 
-  background: white;
-  color: var(--ink);
+  display:
+    block;
 
-  border: 2px solid var(--border);
+  width:
+    100%;
+
+  text-align:
+    left;
+
+  margin:
+    10px 0;
+
+  background:
+    white;
+
+  color:
+    var(--ink);
+
+  border:
+    2px solid var(--border);
 }
 
 .choice:hover {
-  background: #f5f5f5;
-  color: var(--ink);
+
+  background:
+    #f5f5f5;
+
+  color:
+    var(--ink);
 }
 
 .choice.correct {
-  background: var(--green) !important;
-  color: white !important;
-  border-color: var(--green);
+
+  background:
+    var(--green) !important;
+
+  color:
+    white !important;
+
+  border-color:
+    var(--green);
 }
 
 .choice.wrong {
-  background: var(--red) !important;
-  color: white !important;
-  border-color: var(--red);
+
+  background:
+    var(--red) !important;
+
+  color:
+    white !important;
+
+  border-color:
+    var(--red);
 }
 
 .choice:disabled {
-  transform: none;
+
+  transform:
+    none;
 }
 
 
@@ -175,11 +300,18 @@ button:disabled {
 ========================= */
 
 .grid {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
 
-  gap: 15px;
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+
+  gap:
+    15px;
 }
 
 
@@ -188,57 +320,84 @@ button:disabled {
 ========================= */
 
 .event {
-  border: 2px solid var(--border);
-  border-radius: 18px;
-  padding: 18px;
 
-  background: white;
+  border:
+    2px solid var(--border);
+
+  border-radius:
+    18px;
+
+  padding:
+    18px;
+
+  background:
+    white;
 
   transition:
-    .3s,
-    transform .2s;
+    .3s;
 }
 
 .event strong {
-  color: var(--pink);
-  font-size: 1.2rem;
+
+  color:
+    var(--pink);
+
+  font-size:
+    1.2rem;
 }
 
 .event h3 {
-  margin-bottom: 8px;
+
+  margin-bottom:
+    8px;
 }
 
 .event.unlocked {
-  border-color: var(--pink);
+
+  border-color:
+    var(--pink);
 }
 
 .event.current {
-  border-color: var(--purple);
+
+  border-color:
+    var(--purple);
 
   box-shadow:
-    0 0 0 3px rgba(118,87,200,.12);
+    0 0 0 3px
+    rgba(118,87,200,.12);
 }
 
 
 /* =========================
-   BARRA DE PROGRESO
+   PROGRESO
 ========================= */
 
 .progress {
-  height: 12px;
 
-  background: #eeeeee;
+  height:
+    12px;
 
-  border-radius: 99px;
+  background:
+    #eeeeee;
 
-  overflow: hidden;
+  border-radius:
+    99px;
 
-  margin: 14px 0;
+  overflow:
+    hidden;
+
+  margin:
+    14px 0;
 }
 
 .bar {
-  height: 100%;
-  width: 0;
+
+  height:
+    100%;
+
+  width:
+    0;
 
   background:
     linear-gradient(
@@ -253,46 +412,78 @@ button:disabled {
 
 
 /* =========================
-   UTILIDADES
+   ELEMENTOS
 ========================= */
 
-.hidden {
-  display: none !important;
-}
-
 .score {
-  font-size: 1.35rem;
-  font-weight: bold;
-  text-align: center;
+
+  font-size:
+    1.35rem;
+
+  font-weight:
+    bold;
+
+  text-align:
+    center;
 }
 
 .badge {
-  display: inline-block;
 
-  padding: 7px 12px;
+  display:
+    inline-block;
 
-  border-radius: 99px;
+  padding:
+    7px 12px;
 
-  background: #ffe1f0;
-  color: #9a2861;
+  border-radius:
+    99px;
 
-  font-weight: bold;
+  background:
+    #ffe1f0;
 
-  margin: 4px;
+  color:
+    #9a2861;
+
+  font-weight:
+    bold;
+
+  margin:
+    4px;
 }
 
 .small {
-  font-size: .92rem;
-  color: #665d6d;
+
+  font-size:
+    .92rem;
+
+  color:
+    #665d6d;
 }
 
 .feedback {
-  line-height: 1.5;
-  margin-top: 15px;
+
+  line-height:
+    1.5;
+
+  margin-top:
+    15px;
 }
 
 #nextButton {
-  margin-top: 15px;
+
+  margin-top:
+    15px;
+}
+
+
+/* =========================
+   OCULTAR
+========================= */
+
+.hidden {
+
+  display:
+    none !important;
 }
 
 
@@ -301,9 +492,15 @@ button:disabled {
 ========================= */
 
 footer {
-  text-align: center;
-  padding: 25px;
-  color: #aaaaaa;
+
+  text-align:
+    center;
+
+  padding:
+    25px;
+
+  color:
+    #aaaaaa;
 }
 
 
@@ -314,57 +511,84 @@ footer {
 @media (max-width: 600px) {
 
   header {
-    padding: 30px 16px;
+
+    padding:
+      30px 16px;
   }
 
   header h1 {
-    font-size: 2rem;
+
+    font-size:
+      2rem;
   }
 
   header p {
-    font-size: .98rem;
+
+    font-size:
+      .98rem;
   }
 
   main {
-    padding: 15px 10px 35px;
+
+    padding:
+      15px 10px 35px;
   }
 
   .card {
-    padding: 18px;
-    border-radius: 18px;
-    margin: 14px 0;
+
+    padding:
+      18px;
+
+    border-radius:
+      18px;
+
+    margin:
+      14px 0;
   }
 
   .grid {
-    grid-template-columns: 1fr;
+
+    grid-template-columns:
+      1fr;
   }
 
   button {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 1rem;
+
+    width:
+      100%;
+
+    padding:
+      14px 16px;
+
+    font-size:
+      1rem;
   }
 
   .choice {
-    padding: 15px;
+
+    padding:
+      15px;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      ENCABEZADO
-========================= -->
+================================================== -->
 
 <header>
 
-  <h1>🧬 El viaje de la evolución</h1>
+  <h1>
+    🧬 El viaje de la evolución
+  </h1>
 
   <p>
     Un juego interactivo para descubrir cómo fue cambiando
@@ -374,16 +598,19 @@ footer {
 </header>
 
 
+
 <main>
 
 
-<!-- =========================
+<!-- ==================================================
      CÓMO SE JUEGA
-========================= -->
+================================================== -->
 
 <section class="card">
 
-  <h2>🎮 ¿Cómo se juega?</h2>
+  <h2>
+    🎮 ¿Cómo se juega?
+  </h2>
 
   <p>
     Avanzá por distintas etapas de la historia.
@@ -394,11 +621,16 @@ footer {
 
   <div class="grid">
 
+
     <div>
 
-      <span class="badge">1</span>
+      <span class="badge">
+        1
+      </span>
 
-      <b>Descubrí</b>
+      <b>
+        Descubrí
+      </b>
 
       <br>
 
@@ -411,9 +643,13 @@ footer {
 
     <div>
 
-      <span class="badge">2</span>
+      <span class="badge">
+        2
+      </span>
 
-      <b>Elegí</b>
+      <b>
+        Elegí
+      </b>
 
       <br>
 
@@ -426,9 +662,13 @@ footer {
 
     <div>
 
-      <span class="badge">3</span>
+      <span class="badge">
+        3
+      </span>
 
-      <b>Avanzá</b>
+      <b>
+        Avanzá
+      </b>
 
       <br>
 
@@ -438,37 +678,48 @@ footer {
 
     </div>
 
+
   </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- ==================================================
      PREGUNTA
-     ESTÁ ARRIBA DE TODO
-========================= -->
+     
+     AHORA ESTÁ DIRECTAMENTE DESPUÉS
+     DE "CÓMO SE JUEGA"
+================================================== -->
 
 <section
-  class="card hidden"
+  class="card"
   id="quiz"
 >
 
-  <h2>🧠 Pregunta</h2>
+  <h2>
+    🧠 Pregunta
+  </h2>
 
-  <p id="question"></p>
 
-  <div id="choices"></div>
+  <p id="question">
+  </p>
+
+
+  <div id="choices">
+  </div>
+
 
   <p
     id="feedback"
     class="feedback"
-  ></p>
+  >
+  </p>
 
 
   <!--
-    ESTE ES EL ÚNICO BOTÓN
-    DE SIGUIENTE ETAPA
+      ESTE ES EL ÚNICO BOTÓN
+      DE SIGUIENTE ETAPA
   -->
 
   <button
@@ -482,84 +733,92 @@ footer {
 
 
 
-<!-- =========================
+<!-- ==================================================
      LÍNEA DEL TIEMPO
-========================= -->
+================================================== -->
 
 <section class="card">
 
-  <h2>⏳ Línea del tiempo</h2>
+  <h2>
+    ⏳ Línea del tiempo
+  </h2>
+
 
   <div class="progress">
 
     <div
       class="bar"
       id="bar"
-    ></div>
+    >
+    </div>
 
   </div>
+
 
   <div
     id="timeline"
     class="grid"
-  ></div>
+  >
+  </div>
 
 </section>
 
 
 
-<!-- =========================
-     ETAPA ACTUAL
-========================= -->
+<!-- ==================================================
+     ETAPA / INFORMACIÓN
+================================================== -->
 
 <section
   class="card"
   id="game"
 >
 
-  <h2 id="stageTitle">
-    Comenzá el viaje
+  <h2
+    id="stageTitle"
+  >
   </h2>
 
 
-  <div id="stageText">
-
-    <p>
-      Tu misión es recorrer algunos de los momentos
-      que cambiaron la historia de las ideas sobre la evolución.
-    </p>
-
-
-    <button id="startButton">
-      🚀 Empezar
-    </button>
-
+  <div
+    id="stageText"
+  >
   </div>
 
 </section>
 
 
 
-<!-- =========================
+<!-- ==================================================
      RESULTADO
-========================= -->
+================================================== -->
 
 <section
   class="card hidden"
   id="result"
 >
 
-  <h2>🏆 ¡Viaje terminado!</h2>
+  <h2>
+    🏆 ¡Viaje terminado!
+  </h2>
+
 
   <p
     class="score"
     id="score"
-  ></p>
+  >
+  </p>
 
-  <p id="resultText"></p>
+
+  <p
+    id="resultText"
+  >
+  </p>
 
 
-  <button id="restartButton">
+  <button
+    id="restartButton"
+  >
     🔄 Jugar de nuevo
   </button>
 
@@ -567,13 +826,16 @@ footer {
 
 
 
-<!-- =========================
+<!-- ==================================================
      DATO FINAL
-========================= -->
+================================================== -->
 
 <section class="card">
 
-  <h2>💡 Dato final</h2>
+  <h2>
+    💡 Dato final
+  </h2>
+
 
   <p>
     La historia de la evolución no fue una sola idea
@@ -588,6 +850,7 @@ footer {
 </main>
 
 
+
 <footer>
 
   Hecho para aprender jugando · Historia de la evolución 🧬
@@ -600,22 +863,24 @@ footer {
 
 
 /* =====================================================
-   ETAPAS
+   DATOS DE LAS ETAPAS
 ===================================================== */
 
 const stages = [
 
   {
 
-    year: "Antigüedad",
+    year:
+      "Antigüedad",
 
-    title: "Las primeras preguntas",
+    title:
+      "Las primeras preguntas",
 
     text:
-    "Mucho antes de Darwin, distintas sociedades intentaban explicar por qué existían tantos seres vivos y cómo habían aparecido. Durante siglos convivieron explicaciones religiosas, filosóficas y naturales.",
+      "Mucho antes de Darwin, distintas sociedades intentaban explicar por qué existían tantos seres vivos y cómo habían aparecido. Durante siglos convivieron explicaciones religiosas, filosóficas y naturales.",
 
     q:
-    "¿Qué caracterizó a esta etapa?",
+      "¿Qué caracterizó a esta etapa?",
 
     options: [
 
@@ -627,25 +892,28 @@ const stages = [
 
     ],
 
-    answer: 1,
+    answer:
+      1,
 
     why:
-    "Correcto. Durante mucho tiempo existieron diferentes explicaciones filosóficas, religiosas y naturales sobre la vida."
+      "Correcto. Durante mucho tiempo existieron diferentes explicaciones filosóficas, religiosas y naturales sobre la vida."
 
   },
 
 
   {
 
-    year: "1809",
+    year:
+      "1809",
 
-    title: "Jean-Baptiste Lamarck",
+    title:
+      "Jean-Baptiste Lamarck",
 
     text:
-    "Lamarck fue un naturalista francés. Propuso una de las primeras explicaciones sistemáticas sobre cómo podían cambiar los seres vivos a lo largo del tiempo. Su propuesta no coincide con la explicación evolutiva actual, pero fue importante históricamente.",
+      "Lamarck fue un naturalista francés. Propuso una de las primeras explicaciones sistemáticas sobre cómo podían cambiar los seres vivos a lo largo del tiempo. Su propuesta no coincide con la explicación evolutiva actual, pero fue importante históricamente.",
 
     q:
-    "¿Por qué Lamarck es importante en esta historia?",
+      "¿Por qué Lamarck es importante en esta historia?",
 
     options: [
 
@@ -657,25 +925,28 @@ const stages = [
 
     ],
 
-    answer: 1,
+    answer:
+      1,
 
     why:
-    "Exacto. Lamarck ayudó a instalar la idea de que las especies podían cambiar con el tiempo."
+      "Exacto. Lamarck ayudó a instalar la idea de que las especies podían cambiar con el tiempo."
 
   },
 
 
   {
 
-    year: "1859",
+    year:
+      "1859",
 
-    title: "Charles Darwin",
+    title:
+      "Charles Darwin",
 
     text:
-    "Darwin fue un naturalista británico. En 1859 publicó El origen de las especies, una obra que presentó la selección natural como una explicación de cómo podían producirse cambios evolutivos a lo largo de generaciones.",
+      "Darwin fue un naturalista británico. En 1859 publicó El origen de las especies, una obra que presentó la selección natural como una explicación de cómo podían producirse cambios evolutivos a lo largo de generaciones.",
 
     q:
-    "¿Qué presentó Darwin como mecanismo central de la evolución?",
+      "¿Qué presentó Darwin como mecanismo central de la evolución?",
 
     options: [
 
@@ -687,25 +958,28 @@ const stages = [
 
     ],
 
-    answer: 0,
+    answer:
+      0,
 
     why:
-    "¡Muy bien! La selección natural fue una de las ideas centrales de Darwin."
+      "¡Muy bien! La selección natural fue una de las ideas centrales de Darwin."
 
   },
 
 
   {
 
-    year: "1865",
+    year:
+      "1865",
 
-    title: "Gregor Mendel",
+    title:
+      "Gregor Mendel",
 
     text:
-    "Mendel fue un monje y científico que estudió cómo se transmitían determinadas características entre generaciones mediante experimentos con plantas. Sus trabajos ayudaron posteriormente a comprender la herencia.",
+      "Mendel fue un monje y científico que estudió cómo se transmitían determinadas características entre generaciones mediante experimentos con plantas. Sus trabajos ayudaron posteriormente a comprender la herencia.",
 
     q:
-    "¿Qué estudió principalmente Mendel?",
+      "¿Qué estudió principalmente Mendel?",
 
     options: [
 
@@ -717,25 +991,28 @@ const stages = [
 
     ],
 
-    answer: 0,
+    answer:
+      0,
 
     why:
-    "Correcto. Sus experimentos fueron fundamentales para la historia de la genética."
+      "Correcto. Sus experimentos fueron fundamentales para la historia de la genética."
 
   },
 
 
   {
 
-    year: "1869",
+    year:
+      "1869",
 
-    title: "El ADN entra en escena",
+    title:
+      "El ADN entra en escena",
 
     text:
-    "Friedrich Miescher fue un científico suizo que aisló por primera vez una sustancia que hoy sabemos que era ADN. En aquel momento todavía no se conocía su función ni su importancia.",
+      "Friedrich Miescher fue un científico suizo que aisló por primera vez una sustancia que hoy sabemos que era ADN. En aquel momento todavía no se conocía su función ni su importancia.",
 
     q:
-    "¿Qué tiene de especial 1869?",
+      "¿Qué tiene de especial 1869?",
 
     options: [
 
@@ -747,25 +1024,28 @@ const stages = [
 
     ],
 
-    answer: 1,
+    answer:
+      1,
 
     why:
-    "Exacto. Miescher aisló una sustancia que llamó inicialmente 'nucleína', relacionada con lo que hoy conocemos como ADN."
+      "Exacto. Miescher aisló una sustancia que llamó inicialmente 'nucleína', relacionada con lo que hoy conocemos como ADN."
 
   },
 
 
   {
 
-    year: "1900s",
+    year:
+      "1900s",
 
-    title: "Evolución + genética",
+    title:
+      "Evolución + genética",
 
     text:
-    "Durante el siglo XX, las ideas de Darwin sobre evolución y los estudios sobre herencia comenzaron a conectarse. Esta combinación permitió construir una explicación más completa de cómo cambian las poblaciones a través del tiempo.",
+      "Durante el siglo XX, las ideas de Darwin sobre evolución y los estudios sobre herencia comenzaron a conectarse. Esta combinación permitió construir una explicación más completa de cómo cambian las poblaciones a través del tiempo.",
 
     q:
-    "¿Qué ocurrió durante el siglo XX?",
+      "¿Qué ocurrió durante el siglo XX?",
 
     options: [
 
@@ -777,25 +1057,28 @@ const stages = [
 
     ],
 
-    answer: 1,
+    answer:
+      1,
 
     why:
-    "¡Correcto! La genética ayudó a explicar cómo podía heredarse la variación sobre la que actúa la selección natural."
+      "¡Correcto! La genética ayudó a explicar cómo podía heredarse la variación sobre la que actúa la selección natural."
 
   },
 
 
   {
 
-    year: "1953",
+    year:
+      "1953",
 
-    title: "La estructura del ADN",
+    title:
+      "La estructura del ADN",
 
     text:
-    "James Watson y Francis Crick propusieron un modelo de la estructura de doble hélice del ADN, apoyándose también en información obtenida por otros científicos, especialmente los trabajos de Rosalind Franklin y Maurice Wilkins.",
+      "James Watson y Francis Crick propusieron un modelo de la estructura de doble hélice del ADN, apoyándose también en información obtenida por otros científicos, especialmente los trabajos de Rosalind Franklin y Maurice Wilkins.",
 
     q:
-    "¿Qué se propuso en 1953?",
+      "¿Qué se propuso en 1953?",
 
     options: [
 
@@ -807,10 +1090,11 @@ const stages = [
 
     ],
 
-    answer: 0,
+    answer:
+      0,
 
     why:
-    "Correcto. El modelo de doble hélice fue un momento clave para entender cómo está organizado el ADN."
+      "Correcto. El modelo de doble hélice fue un momento clave para entender cómo está organizado el ADN."
 
   }
 
@@ -822,7 +1106,11 @@ const stages = [
    VARIABLES
 ===================================================== */
 
-let current = -1;
+/*
+   Arrancamos directamente en la primera etapa.
+*/
+
+let current = 0;
 
 let score = 0;
 
@@ -835,43 +1123,64 @@ let answered = false;
 ===================================================== */
 
 const timeline =
-  document.getElementById("timeline");
+  document.getElementById(
+    "timeline"
+  );
 
 const bar =
-  document.getElementById("bar");
+  document.getElementById(
+    "bar"
+  );
 
 const game =
-  document.getElementById("game");
+  document.getElementById(
+    "game"
+  );
 
 const quiz =
-  document.getElementById("quiz");
+  document.getElementById(
+    "quiz"
+  );
 
 const result =
-  document.getElementById("result");
+  document.getElementById(
+    "result"
+  );
 
 const stageTitle =
-  document.getElementById("stageTitle");
+  document.getElementById(
+    "stageTitle"
+  );
 
 const stageText =
-  document.getElementById("stageText");
+  document.getElementById(
+    "stageText"
+  );
 
 const question =
-  document.getElementById("question");
+  document.getElementById(
+    "question"
+  );
 
 const choices =
-  document.getElementById("choices");
+  document.getElementById(
+    "choices"
+  );
 
 const feedback =
-  document.getElementById("feedback");
+  document.getElementById(
+    "feedback"
+  );
 
 const nextButton =
-  document.getElementById("nextButton");
-
-const startButton =
-  document.getElementById("startButton");
+  document.getElementById(
+    "nextButton"
+  );
 
 const restartButton =
-  document.getElementById("restartButton");
+  document.getElementById(
+    "restartButton"
+  );
 
 
 
@@ -884,64 +1193,21 @@ function renderTimeline() {
   timeline.innerHTML = "";
 
 
-  stages.forEach((stage, index) => {
+  stages.forEach(
+    (stage, index) => {
 
-    const event =
-      document.createElement("div");
-
-
-    event.className = "event";
-
-    event.id =
-      "event" + index;
+      const event =
+        document.createElement(
+          "div"
+        );
 
 
-    event.innerHTML = `
-
-      <strong>
-        ${stage.year}
-      </strong>
-
-      <h3>
-        ${stage.title}
-      </h3>
-
-      <p>
-        ${
-          index === 0
-          ? "Disponible para comenzar."
-          : "🔒 Desbloqueá esta etapa."
-        }
-      </p>
-
-    `;
+      event.className =
+        "event";
 
 
-    timeline.appendChild(event);
-
-  });
-
-}
-
-
-
-/* =====================================================
-   ACTUALIZAR LÍNEA DEL TIEMPO
-===================================================== */
-
-function updateTimeline() {
-
-  stages.forEach((stage, index) => {
-
-    const event =
-      document.getElementById(
-        "event" + index
-      );
-
-
-    if (index <= current) {
-
-      event.classList.add("unlocked");
+      event.id =
+        "event" + index;
 
 
       event.innerHTML = `
@@ -955,33 +1221,91 @@ function updateTimeline() {
         </h3>
 
         <p>
-          ✅ Desbloqueada
+          ${
+            index === 0
+            ? "Disponible."
+            : "🔒 Desbloqueá esta etapa."
+          }
         </p>
 
       `;
 
-    }
 
-
-    if (index === current) {
-
-      event.classList.add("current");
+      timeline.appendChild(
+        event
+      );
 
     }
+  );
 
-  });
-
-
-  let progress = 0;
+}
 
 
-  if (current >= 0) {
 
-    progress =
-      ((current + 1) /
-      stages.length) * 100;
+/* =====================================================
+   ACTUALIZAR LÍNEA DEL TIEMPO
+===================================================== */
 
-  }
+function updateTimeline() {
+
+  stages.forEach(
+    (stage, index) => {
+
+      const event =
+        document.getElementById(
+          "event" + index
+        );
+
+
+      if (
+        index <= current
+      ) {
+
+        event.classList.add(
+          "unlocked"
+        );
+
+
+        event.innerHTML = `
+
+          <strong>
+            ${stage.year}
+          </strong>
+
+          <h3>
+            ${stage.title}
+          </h3>
+
+          <p>
+            ${
+              index === current
+              ? "📍 Etapa actual"
+              : "✅ Desbloqueada"
+            }
+          </p>
+
+        `;
+
+      }
+
+
+      if (
+        index === current
+      ) {
+
+        event.classList.add(
+          "current"
+        );
+
+      }
+
+    }
+  );
+
+
+  const progress =
+    ((current + 1) /
+    stages.length) * 100;
 
 
   bar.style.width =
@@ -992,160 +1316,62 @@ function updateTimeline() {
 
 
 /* =====================================================
-   COMENZAR
-===================================================== */
-
-function startGame() {
-
-  current = 0;
-
-  score = 0;
-
-  answered = false;
-
-
-  game.classList.remove("hidden");
-
-  quiz.classList.add("hidden");
-
-  result.classList.add("hidden");
-
-
-  showStage();
-
-}
-
-
-
-/* =====================================================
-   MOSTRAR ETAPA
+   MOSTRAR ETAPA Y PREGUNTA
 ===================================================== */
 
 function showStage() {
-
-  answered = false;
-
 
   const stage =
     stages[current];
 
 
-  /* Título */
+  answered =
+    false;
+
+
+  /* =========================
+     INFORMACIÓN
+  ========================= */
 
   stageTitle.textContent =
     `${stage.year} — ${stage.title}`;
 
 
-  /* Limpiar contenido anterior */
+  stageText.innerHTML = `
 
-  stageText.innerHTML = "";
+    <p>
+      ${stage.text}
+    </p>
 
-
-  const paragraph =
-    document.createElement("p");
-
-
-  paragraph.textContent =
-    stage.text;
+  `;
 
 
-  stageText.appendChild(
-    paragraph
-  );
-
-
-  /* Botón responder */
-
-  const answerButton =
-    document.createElement("button");
-
-
-  answerButton.textContent =
-    "🧠 Responder";
-
-
-  answerButton.addEventListener(
-    "click",
-    showQuiz
-  );
-
-
-  stageText.appendChild(
-    answerButton
-  );
-
-
-  /* Limpiar pregunta */
-
-  question.textContent = "";
-
-  choices.innerHTML = "";
-
-  feedback.textContent = "";
-
-  nextButton.classList.add(
-    "hidden"
-  );
-
-
-  /* Mostrar etapa */
-
-  game.classList.remove(
-    "hidden"
-  );
-
-
-  /* Ocultar pregunta */
-
-  quiz.classList.add(
-    "hidden"
-  );
-
-
-  /* Ocultar resultado */
-
-  result.classList.add(
-    "hidden"
-  );
-
-
-  updateTimeline();
-
-}
-
-
-
-/* =====================================================
-   MOSTRAR PREGUNTA
-===================================================== */
-
-function showQuiz() {
-
-  const stage =
-    stages[current];
-
-
-  answered = false;
-
-
-  /* Limpiar pregunta anterior */
-
-  choices.innerHTML = "";
-
-  feedback.textContent = "";
-
-  nextButton.classList.add(
-    "hidden"
-  );
-
-
-  /* Pregunta */
+  /* =========================
+     PREGUNTA
+  ========================= */
 
   question.textContent =
     stage.q;
 
 
-  /* Crear opciones */
+  /* Limpiar opciones anteriores */
+
+  choices.innerHTML =
+    "";
+
+
+  feedback.textContent =
+    "";
+
+
+  nextButton.classList.add(
+    "hidden"
+  );
+
+
+  /* =========================
+     CREAR OPCIONES
+  ========================= */
 
   stage.options.forEach(
     (option, index) => {
@@ -1166,11 +1392,7 @@ function showQuiz() {
 
       button.addEventListener(
         "click",
-        function() {
-
-          answer(index);
-
-        }
+        () => answer(index)
       );
 
 
@@ -1182,25 +1404,24 @@ function showQuiz() {
   );
 
 
-  /* Mostrar pregunta */
+  /* =========================
+     MOSTRAR TODO
+  ========================= */
+
+  game.classList.remove(
+    "hidden"
+  );
 
   quiz.classList.remove(
     "hidden"
   );
 
+  result.classList.add(
+    "hidden"
+  );
 
-  /*
-    Subimos automáticamente
-    hasta la pregunta.
-  */
 
-  quiz.scrollIntoView({
-
-    behavior: "smooth",
-
-    block: "center"
-
-  });
+  updateTimeline();
 
 }
 
@@ -1210,16 +1431,26 @@ function showQuiz() {
    RESPONDER
 ===================================================== */
 
-function answer(selectedIndex) {
+function answer(
+  selectedIndex
+) {
 
-  if (answered) {
+  /*
+    Evita que se pueda
+    responder más de una vez.
+  */
+
+  if (
+    answered
+  ) {
 
     return;
 
   }
 
 
-  answered = true;
+  answered =
+    true;
 
 
   const stage =
@@ -1232,15 +1463,21 @@ function answer(selectedIndex) {
     );
 
 
-  /* Bloquear respuestas */
+  /* =========================
+     BLOQUEAR OPCIONES
+  ========================= */
 
   buttons.forEach(
     (button, index) => {
 
-      button.disabled = true;
+      button.disabled =
+        true;
 
 
-      /* Respuesta correcta */
+      /*
+        Siempre mostramos
+        cuál era la correcta.
+      */
 
       if (
         index === stage.answer
@@ -1253,7 +1490,10 @@ function answer(selectedIndex) {
       }
 
 
-      /* Respuesta incorrecta */
+      /*
+        Si eligió mal,
+        marcamos su elección.
+      */
 
       if (
         index === selectedIndex &&
@@ -1270,7 +1510,9 @@ function answer(selectedIndex) {
   );
 
 
-  /* Feedback */
+  /* =========================
+     CONTAR PUNTOS
+  ========================= */
 
   if (
     selectedIndex === stage.answer
@@ -1294,12 +1536,13 @@ function answer(selectedIndex) {
   }
 
 
-  /* =================================================
-     MOSTRAR EL ÚNICO BOTÓN DE SIGUIENTE
-  ================================================= */
+  /* =========================
+     ÚNICO BOTÓN SIGUIENTE
+  ========================= */
 
   if (
-    current === stages.length - 1
+    current ===
+    stages.length - 1
   ) {
 
     nextButton.textContent =
@@ -1330,8 +1573,7 @@ function answer(selectedIndex) {
 function nextStage() {
 
   /*
-    Ocultamos el botón
-    antes de cambiar.
+    Primero ocultamos el botón.
   */
 
   nextButton.classList.add(
@@ -1339,10 +1581,17 @@ function nextStage() {
   );
 
 
+  /*
+    Avanzamos una etapa.
+  */
+
   current++;
 
 
-  /* Todavía quedan etapas */
+  /*
+    Si todavía quedan etapas,
+    mostramos la siguiente.
+  */
 
   if (
     current < stages.length
@@ -1350,12 +1599,31 @@ function nextStage() {
 
     showStage();
 
+    /*
+      Llevamos al usuario
+      nuevamente a la pregunta.
+    */
+
+    quiz.scrollIntoView({
+
+      behavior:
+        "smooth",
+
+      block:
+        "start"
+
+    });
+
+
     return;
 
   }
 
 
-  /* Terminó el juego */
+  /*
+    Si no quedan etapas,
+    mostramos el resultado.
+  */
 
   finish();
 
@@ -1364,7 +1632,7 @@ function nextStage() {
 
 
 /* =====================================================
-   FINAL
+   FINAL DEL JUEGO
 ===================================================== */
 
 function finish() {
@@ -1387,6 +1655,7 @@ function finish() {
   document.getElementById(
     "score"
   ).textContent =
+
     `${score} / ${stages.length} respuestas correctas`;
 
 
@@ -1427,9 +1696,11 @@ function finish() {
 
   result.scrollIntoView({
 
-    behavior: "smooth",
+    behavior:
+      "smooth",
 
-    block: "center"
+    block:
+      "center"
 
   });
 
@@ -1443,106 +1714,94 @@ function finish() {
 
 function restart() {
 
-  current = -1;
+  /*
+    Volvemos a la primera etapa.
+  */
 
-  score = 0;
-
-  answered = false;
-
-
-  /* Limpiar pregunta */
-
-  question.textContent = "";
-
-  choices.innerHTML = "";
-
-  feedback.textContent = "";
+  current =
+    0;
 
 
-  nextButton.classList.add(
-    "hidden"
-  );
+  score =
+    0;
 
 
-  /* Reiniciar timeline */
-
-  renderTimeline();
-
-
-  bar.style.width =
-    "0%";
+  answered =
+    false;
 
 
-  /* Pantallas */
+  /*
+    Limpiamos el resultado.
+  */
 
   result.classList.add(
     "hidden"
   );
 
-  quiz.classList.add(
-    "hidden"
-  );
+
+  /*
+    Volvemos a mostrar
+    juego y pregunta.
+  */
 
   game.classList.remove(
     "hidden"
   );
 
-
-  /* Pantalla inicial */
-
-  stageTitle.textContent =
-    "Comenzá el viaje";
-
-
-  stageText.innerHTML = `
-
-    <p>
-      Tu misión es recorrer algunos de los momentos
-      que cambiaron la historia de las ideas sobre la evolución.
-    </p>
-
-  `;
-
-
-  const button =
-    document.createElement(
-      "button"
-    );
-
-
-  button.textContent =
-    "🚀 Empezar";
-
-
-  button.addEventListener(
-    "click",
-    startGame
+  quiz.classList.remove(
+    "hidden"
   );
 
 
-  stageText.appendChild(
-    button
-  );
+  /*
+    Restauramos la línea
+    del tiempo.
+  */
+
+  renderTimeline();
+
+
+  /*
+    Mostramos la primera etapa
+    y su pregunta.
+  */
+
+  showStage();
+
+
+  /*
+    Subimos al principio
+    de la sección del juego.
+  */
+
+  quiz.scrollIntoView({
+
+    behavior:
+      "smooth",
+
+    block:
+      "start"
+
+  });
 
 }
 
 
 
 /* =====================================================
-   BOTONES PRINCIPALES
+   BOTÓN SIGUIENTE
 ===================================================== */
-
-startButton.addEventListener(
-  "click",
-  startGame
-);
-
 
 nextButton.addEventListener(
   "click",
   nextStage
 );
 
+
+
+/* =====================================================
+   BOTÓN REINICIAR
+===================================================== */
 
 restartButton.addEventListener(
   "click",
@@ -1552,10 +1811,12 @@ restartButton.addEventListener(
 
 
 /* =====================================================
-   INICIAR LÍNEA DEL TIEMPO
+   INICIAR AUTOMÁTICAMENTE
 ===================================================== */
 
 renderTimeline();
+
+showStage();
 
 </script>
 
