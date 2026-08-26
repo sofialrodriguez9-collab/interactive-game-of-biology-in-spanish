@@ -1,8 +1,13 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>El viaje de la evolución</title>
 
 <style>
@@ -16,7 +21,6 @@
   --purple: #7657c8;
   --green: #56a66b;
   --red: #d95757;
-  --light-gray: #f3f3f3;
   --border: #e5e5e5;
   --shadow: 0 12px 30px rgba(0,0,0,.35);
 }
@@ -36,7 +40,10 @@ body {
   color: var(--ink);
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
   padding: 40px 20px;
@@ -57,7 +64,10 @@ header p {
   line-height: 1.5;
 }
 
-/* CONTENIDO */
+
+/* =========================
+   CONTENIDO
+========================= */
 
 main {
   width: 100%;
@@ -68,7 +78,7 @@ main {
 
 .card {
   background: white;
-  color: #171717;
+  color: var(--ink);
   border-radius: 22px;
   padding: 24px;
   margin: 18px 0;
@@ -84,24 +94,31 @@ h2 {
   color: #6846b7;
 }
 
-/* BOTONES */
+
+/* =========================
+   BOTONES
+========================= */
 
 button {
-  border: 0;
+  border: none;
   border-radius: 14px;
   padding: 12px 18px;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   cursor: pointer;
-  background: #e94f9d;
+
+  background: var(--pink);
   color: white;
-  text-align: center;
-  transition: transform .2s, filter .2s;
+
+  transition:
+    transform .2s,
+    filter .2s,
+    background .2s;
 }
 
 button:hover {
-  background: #d63b89;
+  background: var(--pink-dark);
   transform: translateY(-2px);
   filter: brightness(1.08);
 }
@@ -114,57 +131,76 @@ button:disabled {
   cursor: default;
 }
 
+
+/* =========================
+   OPCIONES
+========================= */
+
 .choice {
   display: block;
   width: 100%;
   text-align: left;
   margin: 10px 0;
+
   background: white;
-  color: #171717;
-  border: 2px solid #e5e5e5;
+  color: var(--ink);
+
+  border: 2px solid var(--border);
 }
 
 .choice:hover {
   background: #f5f5f5;
-  color: #171717;
+  color: var(--ink);
 }
 
 .choice.correct {
-  background: #56a66b !important;
+  background: var(--green) !important;
   color: white !important;
-  border-color: #56a66b;
+  border-color: var(--green);
 }
 
 .choice.wrong {
-  background: #d95757 !important;
+  background: var(--red) !important;
   color: white !important;
-  border-color: #d95757;
+  border-color: var(--red);
 }
 
 .choice:disabled {
   transform: none;
 }
 
-/* GRID */
+
+/* =========================
+   GRID
+========================= */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
   gap: 15px;
 }
 
-/* EVENTOS */
+
+/* =========================
+   LÍNEA DEL TIEMPO
+========================= */
 
 .event {
-  border: 2px solid #e5e5e5;
+  border: 2px solid var(--border);
   border-radius: 18px;
   padding: 18px;
+
   background: white;
-  transition: .3s;
+
+  transition:
+    .3s,
+    transform .2s;
 }
 
 .event strong {
-  color: #e94f9d;
+  color: var(--pink);
   font-size: 1.2rem;
 }
 
@@ -173,32 +209,52 @@ button:disabled {
 }
 
 .event.unlocked {
-  border-color: #e94f9d;
+  border-color: var(--pink);
 }
 
 .event.current {
-  border-color: #7657c8;
-  box-shadow: 0 0 0 3px rgba(118,87,200,.12);
+  border-color: var(--purple);
+
+  box-shadow:
+    0 0 0 3px rgba(118,87,200,.12);
 }
 
-/* PROGRESO */
+
+/* =========================
+   BARRA DE PROGRESO
+========================= */
 
 .progress {
   height: 12px;
+
   background: #eeeeee;
+
   border-radius: 99px;
+
   overflow: hidden;
+
   margin: 14px 0;
 }
 
 .bar {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, #e94f9d, #7657c8);
-  transition: width .4s ease;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple)
+    );
+
+  transition:
+    width .4s ease;
 }
 
-/* UTILIDADES */
+
+/* =========================
+   UTILIDADES
+========================= */
 
 .hidden {
   display: none !important;
@@ -212,11 +268,16 @@ button:disabled {
 
 .badge {
   display: inline-block;
+
   padding: 7px 12px;
+
   border-radius: 99px;
+
   background: #ffe1f0;
   color: #9a2861;
+
   font-weight: bold;
+
   margin: 4px;
 }
 
@@ -226,13 +287,18 @@ button:disabled {
 }
 
 .feedback {
-  margin-top: 15px;
   line-height: 1.5;
+  margin-top: 15px;
 }
 
 #nextButton {
   margin-top: 15px;
 }
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   text-align: center;
@@ -240,7 +306,10 @@ footer {
   color: #aaaaaa;
 }
 
-/* CELULAR */
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
 
@@ -288,6 +357,11 @@ footer {
 
 <body>
 
+
+<!-- =========================
+     ENCABEZADO
+========================= -->
+
 <header>
 
   <h1>🧬 El viaje de la evolución</h1>
@@ -302,7 +376,10 @@ footer {
 
 <main>
 
-<!-- INTRODUCCIÓN -->
+
+<!-- =========================
+     CÓMO SE JUEGA
+========================= -->
 
 <section class="card">
 
@@ -314,33 +391,51 @@ footer {
     importante y después tendrás que responder una pregunta.
   </p>
 
+
   <div class="grid">
 
     <div>
+
       <span class="badge">1</span>
+
       <b>Descubrí</b>
+
       <br>
+
       <span class="small">
         Conocé el contexto histórico.
       </span>
+
     </div>
 
+
     <div>
+
       <span class="badge">2</span>
+
       <b>Elegí</b>
+
       <br>
+
       <span class="small">
         Respondé una pregunta.
       </span>
+
     </div>
 
+
     <div>
+
       <span class="badge">3</span>
+
       <b>Avanzá</b>
+
       <br>
+
       <span class="small">
         Desbloqueá la siguiente etapa.
       </span>
+
     </div>
 
   </div>
@@ -348,35 +443,92 @@ footer {
 </section>
 
 
-<!-- LÍNEA DEL TIEMPO -->
+
+<!-- =========================
+     PREGUNTA
+     ESTÁ ARRIBA DE TODO
+========================= -->
+
+<section
+  class="card hidden"
+  id="quiz"
+>
+
+  <h2>🧠 Pregunta</h2>
+
+  <p id="question"></p>
+
+  <div id="choices"></div>
+
+  <p
+    id="feedback"
+    class="feedback"
+  ></p>
+
+
+  <!--
+    ESTE ES EL ÚNICO BOTÓN
+    DE SIGUIENTE ETAPA
+  -->
+
+  <button
+    id="nextButton"
+    class="hidden"
+  >
+    ➡️ Siguiente etapa
+  </button>
+
+</section>
+
+
+
+<!-- =========================
+     LÍNEA DEL TIEMPO
+========================= -->
 
 <section class="card">
 
   <h2>⏳ Línea del tiempo</h2>
 
   <div class="progress">
-    <div class="bar" id="bar"></div>
+
+    <div
+      class="bar"
+      id="bar"
+    ></div>
+
   </div>
 
-  <div id="timeline" class="grid"></div>
+  <div
+    id="timeline"
+    class="grid"
+  ></div>
 
 </section>
 
 
-<!-- ETAPA -->
 
-<section class="card" id="game">
+<!-- =========================
+     ETAPA ACTUAL
+========================= -->
+
+<section
+  class="card"
+  id="game"
+>
 
   <h2 id="stageTitle">
     Comenzá el viaje
   </h2>
 
+
   <div id="stageText">
 
     <p>
-      Tu misión es recorrer algunos de los momentos que cambiaron
-      la historia de las ideas sobre la evolución.
+      Tu misión es recorrer algunos de los momentos
+      que cambiaron la historia de las ideas sobre la evolución.
     </p>
+
 
     <button id="startButton">
       🚀 Empezar
@@ -387,39 +539,25 @@ footer {
 </section>
 
 
-<!-- PREGUNTA -->
 
-<section class="card hidden" id="quiz">
+<!-- =========================
+     RESULTADO
+========================= -->
 
-  <h2>🧠 Pregunta</h2>
-
-  <p id="question"></p>
-
-  <div id="choices"></div>
-
-  <p id="feedback" class="feedback"></p>
-
-  <!--
-    ESTE ES EL ÚNICO BOTÓN DE SIGUIENTE
-    NO SE CREA NINGÚN OTRO DESDE JAVASCRIPT
-  -->
-
-  <button id="nextButton" class="hidden">
-    ➡️ Siguiente etapa
-  </button>
-
-</section>
-
-
-<!-- RESULTADO -->
-
-<section class="card hidden" id="result">
+<section
+  class="card hidden"
+  id="result"
+>
 
   <h2>🏆 ¡Viaje terminado!</h2>
 
-  <p class="score" id="score"></p>
+  <p
+    class="score"
+    id="score"
+  ></p>
 
   <p id="resultText"></p>
+
 
   <button id="restartButton">
     🔄 Jugar de nuevo
@@ -428,37 +566,47 @@ footer {
 </section>
 
 
-<!-- DATO FINAL -->
+
+<!-- =========================
+     DATO FINAL
+========================= -->
 
 <section class="card">
 
   <h2>💡 Dato final</h2>
 
   <p>
-    La historia de la evolución no fue una sola idea que apareció
-    de repente. Fue un proceso de preguntas, observaciones, debates
-    y nuevos descubrimientos que se fue construyendo durante siglos.
+    La historia de la evolución no fue una sola idea
+    que apareció de repente. Fue un proceso de preguntas,
+    observaciones, debates y nuevos descubrimientos
+    que se fue construyendo durante siglos.
   </p>
 
 </section>
+
 
 </main>
 
 
 <footer>
+
   Hecho para aprender jugando · Historia de la evolución 🧬
+
 </footer>
+
 
 
 <script>
 
-/* =========================================================
-   DATOS DEL JUEGO
-   ========================================================= */
+
+/* =====================================================
+   ETAPAS
+===================================================== */
 
 const stages = [
 
   {
+
     year: "Antigüedad",
 
     title: "Las primeras preguntas",
@@ -466,22 +614,29 @@ const stages = [
     text:
     "Mucho antes de Darwin, distintas sociedades intentaban explicar por qué existían tantos seres vivos y cómo habían aparecido. Durante siglos convivieron explicaciones religiosas, filosóficas y naturales.",
 
-    q: "¿Qué caracterizó a esta etapa?",
+    q:
+    "¿Qué caracterizó a esta etapa?",
 
     options: [
+
       "Ya existía la teoría moderna de la evolución",
+
       "Había distintas explicaciones sobre el origen y la diversidad de los seres vivos",
+
       "Ya se conocía el ADN"
+
     ],
 
     answer: 1,
 
     why:
     "Correcto. Durante mucho tiempo existieron diferentes explicaciones filosóficas, religiosas y naturales sobre la vida."
+
   },
 
 
   {
+
     year: "1809",
 
     title: "Jean-Baptiste Lamarck",
@@ -489,22 +644,29 @@ const stages = [
     text:
     "Lamarck fue un naturalista francés. Propuso una de las primeras explicaciones sistemáticas sobre cómo podían cambiar los seres vivos a lo largo del tiempo. Su propuesta no coincide con la explicación evolutiva actual, pero fue importante históricamente.",
 
-    q: "¿Por qué Lamarck es importante en esta historia?",
+    q:
+    "¿Por qué Lamarck es importante en esta historia?",
 
     options: [
+
       "Porque descubrió la estructura del ADN",
+
       "Porque planteó una explicación temprana sobre el cambio de los seres vivos",
+
       "Porque fue quien publicó El origen de las especies"
+
     ],
 
     answer: 1,
 
     why:
     "Exacto. Lamarck ayudó a instalar la idea de que las especies podían cambiar con el tiempo."
+
   },
 
 
   {
+
     year: "1859",
 
     title: "Charles Darwin",
@@ -512,22 +674,29 @@ const stages = [
     text:
     "Darwin fue un naturalista británico. En 1859 publicó El origen de las especies, una obra que presentó la selección natural como una explicación de cómo podían producirse cambios evolutivos a lo largo de generaciones.",
 
-    q: "¿Qué presentó Darwin como mecanismo central de la evolución?",
+    q:
+    "¿Qué presentó Darwin como mecanismo central de la evolución?",
 
     options: [
+
       "La selección natural",
+
       "La electricidad",
+
       "La teoría celular"
+
     ],
 
     answer: 0,
 
     why:
     "¡Muy bien! La selección natural fue una de las ideas centrales de Darwin."
+
   },
 
 
   {
+
     year: "1865",
 
     title: "Gregor Mendel",
@@ -535,22 +704,29 @@ const stages = [
     text:
     "Mendel fue un monje y científico que estudió cómo se transmitían determinadas características entre generaciones mediante experimentos con plantas. Sus trabajos ayudaron posteriormente a comprender la herencia.",
 
-    q: "¿Qué estudió principalmente Mendel?",
+    q:
+    "¿Qué estudió principalmente Mendel?",
 
     options: [
+
       "La herencia de características",
+
       "Los planetas",
+
       "La edad de las rocas"
+
     ],
 
     answer: 0,
 
     why:
     "Correcto. Sus experimentos fueron fundamentales para la historia de la genética."
+
   },
 
 
   {
+
     year: "1869",
 
     title: "El ADN entra en escena",
@@ -558,22 +734,29 @@ const stages = [
     text:
     "Friedrich Miescher fue un científico suizo que aisló por primera vez una sustancia que hoy sabemos que era ADN. En aquel momento todavía no se conocía su función ni su importancia.",
 
-    q: "¿Qué tiene de especial 1869?",
+    q:
+    "¿Qué tiene de especial 1869?",
 
     options: [
+
       "Se publicó El origen de las especies",
+
       "Miescher aisló por primera vez una sustancia que hoy identificamos como ADN",
+
       "Se descubrió la selección natural"
+
     ],
 
     answer: 1,
 
     why:
     "Exacto. Miescher aisló una sustancia que llamó inicialmente 'nucleína', relacionada con lo que hoy conocemos como ADN."
+
   },
 
 
   {
+
     year: "1900s",
 
     title: "Evolución + genética",
@@ -581,22 +764,29 @@ const stages = [
     text:
     "Durante el siglo XX, las ideas de Darwin sobre evolución y los estudios sobre herencia comenzaron a conectarse. Esta combinación permitió construir una explicación más completa de cómo cambian las poblaciones a través del tiempo.",
 
-    q: "¿Qué ocurrió durante el siglo XX?",
+    q:
+    "¿Qué ocurrió durante el siglo XX?",
 
     options: [
+
       "Se abandonó el estudio de la herencia",
+
       "Se conectaron las ideas de evolución con la genética",
+
       "Se dejó de estudiar el ADN"
+
     ],
 
     answer: 1,
 
     why:
     "¡Correcto! La genética ayudó a explicar cómo podía heredarse la variación sobre la que actúa la selección natural."
+
   },
 
 
   {
+
     year: "1953",
 
     title: "La estructura del ADN",
@@ -604,83 +794,128 @@ const stages = [
     text:
     "James Watson y Francis Crick propusieron un modelo de la estructura de doble hélice del ADN, apoyándose también en información obtenida por otros científicos, especialmente los trabajos de Rosalind Franklin y Maurice Wilkins.",
 
-    q: "¿Qué se propuso en 1953?",
+    q:
+    "¿Qué se propuso en 1953?",
 
     options: [
+
       "La estructura de doble hélice del ADN",
+
       "La primera teoría sobre la vida",
+
       "La selección natural"
+
     ],
 
     answer: 0,
 
     why:
     "Correcto. El modelo de doble hélice fue un momento clave para entender cómo está organizado el ADN."
+
   }
 
 ];
 
 
-/* =========================================================
+
+/* =====================================================
    VARIABLES
-   ========================================================= */
+===================================================== */
 
 let current = -1;
+
 let score = 0;
+
 let answered = false;
 
 
-/* =========================================================
+
+/* =====================================================
    ELEMENTOS
-   ========================================================= */
+===================================================== */
 
-const timeline = document.getElementById("timeline");
-const bar = document.getElementById("bar");
+const timeline =
+  document.getElementById("timeline");
 
-const game = document.getElementById("game");
-const quiz = document.getElementById("quiz");
-const result = document.getElementById("result");
+const bar =
+  document.getElementById("bar");
 
-const stageTitle = document.getElementById("stageTitle");
-const stageText = document.getElementById("stageText");
+const game =
+  document.getElementById("game");
 
-const question = document.getElementById("question");
-const choices = document.getElementById("choices");
-const feedback = document.getElementById("feedback");
+const quiz =
+  document.getElementById("quiz");
 
-const nextButton = document.getElementById("nextButton");
+const result =
+  document.getElementById("result");
 
-const startButton = document.getElementById("startButton");
-const restartButton = document.getElementById("restartButton");
+const stageTitle =
+  document.getElementById("stageTitle");
+
+const stageText =
+  document.getElementById("stageText");
+
+const question =
+  document.getElementById("question");
+
+const choices =
+  document.getElementById("choices");
+
+const feedback =
+  document.getElementById("feedback");
+
+const nextButton =
+  document.getElementById("nextButton");
+
+const startButton =
+  document.getElementById("startButton");
+
+const restartButton =
+  document.getElementById("restartButton");
 
 
-/* =========================================================
-   LÍNEA DEL TIEMPO
-   ========================================================= */
+
+/* =====================================================
+   CREAR LÍNEA DEL TIEMPO
+===================================================== */
 
 function renderTimeline() {
 
   timeline.innerHTML = "";
 
+
   stages.forEach((stage, index) => {
 
-    const event = document.createElement("div");
+    const event =
+      document.createElement("div");
+
 
     event.className = "event";
-    event.id = "event" + index;
+
+    event.id =
+      "event" + index;
+
 
     event.innerHTML = `
-      <strong>${stage.year}</strong>
 
-      <h3>${stage.title}</h3>
+      <strong>
+        ${stage.year}
+      </strong>
+
+      <h3>
+        ${stage.title}
+      </h3>
 
       <p>
-        ${index === 0
+        ${
+          index === 0
           ? "Disponible para comenzar."
           : "🔒 Desbloqueá esta etapa."
         }
       </p>
+
     `;
+
 
     timeline.appendChild(event);
 
@@ -689,32 +924,49 @@ function renderTimeline() {
 }
 
 
-/* =========================================================
+
+/* =====================================================
    ACTUALIZAR LÍNEA DEL TIEMPO
-   ========================================================= */
+===================================================== */
 
 function updateTimeline() {
 
   stages.forEach((stage, index) => {
 
-    const event = document.getElementById("event" + index);
+    const event =
+      document.getElementById(
+        "event" + index
+      );
+
 
     if (index <= current) {
 
       event.classList.add("unlocked");
 
+
       event.innerHTML = `
-        <strong>${stage.year}</strong>
 
-        <h3>${stage.title}</h3>
+        <strong>
+          ${stage.year}
+        </strong>
 
-        <p>✅ Desbloqueada</p>
+        <h3>
+          ${stage.title}
+        </h3>
+
+        <p>
+          ✅ Desbloqueada
+        </p>
+
       `;
 
     }
 
+
     if (index === current) {
+
       event.classList.add("current");
+
     }
 
   });
@@ -722,77 +974,108 @@ function updateTimeline() {
 
   let progress = 0;
 
+
   if (current >= 0) {
+
     progress =
-      ((current + 1) / stages.length) * 100;
+      ((current + 1) /
+      stages.length) * 100;
+
   }
 
-  bar.style.width = progress + "%";
+
+  bar.style.width =
+    progress + "%";
 
 }
 
 
-/* =========================================================
-   EMPEZAR
-   ========================================================= */
+
+/* =====================================================
+   COMENZAR
+===================================================== */
 
 function startGame() {
 
   current = 0;
+
   score = 0;
+
   answered = false;
 
-  result.classList.add("hidden");
 
   game.classList.remove("hidden");
 
   quiz.classList.add("hidden");
+
+  result.classList.add("hidden");
+
 
   showStage();
 
 }
 
 
-/* =========================================================
+
+/* =====================================================
    MOSTRAR ETAPA
-   ========================================================= */
+===================================================== */
 
 function showStage() {
 
   answered = false;
 
-  const stage = stages[current];
+
+  const stage =
+    stages[current];
 
 
-  /* Actualizamos título */
+  /* Título */
 
   stageTitle.textContent =
     `${stage.year} — ${stage.title}`;
 
 
-  /* Actualizamos información */
+  /* Limpiar contenido anterior */
 
   stageText.innerHTML = "";
 
-  const paragraph = document.createElement("p");
 
-  paragraph.textContent = stage.text;
-
-  stageText.appendChild(paragraph);
+  const paragraph =
+    document.createElement("p");
 
 
-  /* Creamos SOLO el botón de responder */
-
-  const answerButton = document.createElement("button");
-
-  answerButton.textContent = "🧠 Responder";
-
-  answerButton.addEventListener("click", showQuiz);
-
-  stageText.appendChild(answerButton);
+  paragraph.textContent =
+    stage.text;
 
 
-  /* Limpiamos completamente el cuestionario */
+  stageText.appendChild(
+    paragraph
+  );
+
+
+  /* Botón responder */
+
+  const answerButton =
+    document.createElement("button");
+
+
+  answerButton.textContent =
+    "🧠 Responder";
+
+
+  answerButton.addEventListener(
+    "click",
+    showQuiz
+  );
+
+
+  stageText.appendChild(
+    answerButton
+  );
+
+
+  /* Limpiar pregunta */
 
   question.textContent = "";
 
@@ -800,192 +1083,270 @@ function showStage() {
 
   feedback.textContent = "";
 
-  nextButton.classList.add("hidden");
+  nextButton.classList.add(
+    "hidden"
+  );
 
 
-  /* Mostramos/ocultamos */
+  /* Mostrar etapa */
 
-  game.classList.remove("hidden");
+  game.classList.remove(
+    "hidden"
+  );
 
-  quiz.classList.add("hidden");
 
-  result.classList.add("hidden");
+  /* Ocultar pregunta */
+
+  quiz.classList.add(
+    "hidden"
+  );
+
+
+  /* Ocultar resultado */
+
+  result.classList.add(
+    "hidden"
+  );
 
 
   updateTimeline();
 
-
-  game.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-
 }
 
 
-/* =========================================================
+
+/* =====================================================
    MOSTRAR PREGUNTA
-   ========================================================= */
+===================================================== */
 
 function showQuiz() {
 
-  const stage = stages[current];
+  const stage =
+    stages[current];
+
 
   answered = false;
 
 
-  /* Limpiamos TODO antes de cargar la pregunta */
+  /* Limpiar pregunta anterior */
 
   choices.innerHTML = "";
 
   feedback.textContent = "";
 
-  nextButton.classList.add("hidden");
+  nextButton.classList.add(
+    "hidden"
+  );
 
 
   /* Pregunta */
 
-  question.textContent = stage.q;
+  question.textContent =
+    stage.q;
 
 
-  /* Opciones */
+  /* Crear opciones */
 
-  stage.options.forEach((option, index) => {
+  stage.options.forEach(
+    (option, index) => {
 
-    const button = document.createElement("button");
-
-    button.className = "choice";
-
-    button.textContent =
-      `${String.fromCharCode(65 + index)}. ${option}`;
-
-    button.addEventListener("click", function() {
-      answer(index);
-    });
-
-    choices.appendChild(button);
-
-  });
+      const button =
+        document.createElement(
+          "button"
+        );
 
 
-  quiz.classList.remove("hidden");
+      button.className =
+        "choice";
 
+
+      button.textContent =
+        `${String.fromCharCode(65 + index)}. ${option}`;
+
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          answer(index);
+
+        }
+      );
+
+
+      choices.appendChild(
+        button
+      );
+
+    }
+  );
+
+
+  /* Mostrar pregunta */
+
+  quiz.classList.remove(
+    "hidden"
+  );
+
+
+  /*
+    Subimos automáticamente
+    hasta la pregunta.
+  */
 
   quiz.scrollIntoView({
+
     behavior: "smooth",
+
     block: "center"
+
   });
 
 }
 
 
-/* =========================================================
+
+/* =====================================================
    RESPONDER
-   ========================================================= */
+===================================================== */
 
 function answer(selectedIndex) {
 
-  /* Evita responder dos veces */
-
   if (answered) {
+
     return;
+
   }
+
 
   answered = true;
 
-  const stage = stages[current];
+
+  const stage =
+    stages[current];
+
 
   const buttons =
-    choices.querySelectorAll(".choice");
+    choices.querySelectorAll(
+      ".choice"
+    );
 
 
-  /* Bloqueamos todas las opciones */
+  /* Bloquear respuestas */
 
-  buttons.forEach((button, index) => {
+  buttons.forEach(
+    (button, index) => {
 
-    button.disabled = true;
+      button.disabled = true;
 
 
-    /* Marcamos la correcta */
+      /* Respuesta correcta */
 
-    if (index === stage.answer) {
-      button.classList.add("correct");
+      if (
+        index === stage.answer
+      ) {
+
+        button.classList.add(
+          "correct"
+        );
+
+      }
+
+
+      /* Respuesta incorrecta */
+
+      if (
+        index === selectedIndex &&
+        selectedIndex !== stage.answer
+      ) {
+
+        button.classList.add(
+          "wrong"
+        );
+
+      }
+
     }
-
-
-    /* Marcamos la incorrecta */
-
-    if (
-      index === selectedIndex &&
-      selectedIndex !== stage.answer
-    ) {
-      button.classList.add("wrong");
-    }
-
-  });
+  );
 
 
   /* Feedback */
 
-  if (selectedIndex === stage.answer) {
+  if (
+    selectedIndex === stage.answer
+  ) {
 
     score++;
 
-    feedback.innerHTML =
-      "🎉 <b>¡Correcto!</b> " + stage.why;
-
-  } else {
 
     feedback.innerHTML =
-      "💭 <b>No exactamente.</b> " + stage.why;
+      "🎉 <b>¡Correcto!</b> " +
+      stage.why;
+
+  }
+
+  else {
+
+    feedback.innerHTML =
+      "💭 <b>No exactamente.</b> " +
+      stage.why;
 
   }
 
 
-  /* =====================================================
-     IMPORTANTE:
-     ACÁ NO SE CREA NINGÚN BOTÓN.
-     
-     SOLO MOSTRAMOS EL ÚNICO #nextButton
-     QUE YA EXISTE EN EL HTML.
-     ===================================================== */
+  /* =================================================
+     MOSTRAR EL ÚNICO BOTÓN DE SIGUIENTE
+  ================================================= */
 
-  if (current === stages.length - 1) {
+  if (
+    current === stages.length - 1
+  ) {
 
     nextButton.textContent =
       "🏆 Ver resultado";
 
-  } else {
+  }
+
+  else {
 
     nextButton.textContent =
       "➡️ Siguiente etapa";
 
   }
 
-  nextButton.classList.remove("hidden");
+
+  nextButton.classList.remove(
+    "hidden"
+  );
 
 }
 
 
-/* =========================================================
+
+/* =====================================================
    SIGUIENTE ETAPA
-   ========================================================= */
+===================================================== */
 
 function nextStage() {
 
-  /* Ocultamos inmediatamente el botón */
+  /*
+    Ocultamos el botón
+    antes de cambiar.
+  */
 
-  nextButton.classList.add("hidden");
+  nextButton.classList.add(
+    "hidden"
+  );
 
-
-  /* Pasamos a la siguiente */
 
   current++;
 
 
-  /* Si quedan etapas */
+  /* Todavía quedan etapas */
 
-  if (current < stages.length) {
+  if (
+    current < stages.length
+  ) {
 
     showStage();
 
@@ -994,41 +1355,56 @@ function nextStage() {
   }
 
 
-  /* Si no quedan etapas */
+  /* Terminó el juego */
 
   finish();
 
 }
 
 
-/* =========================================================
+
+/* =====================================================
    FINAL
-   ========================================================= */
+===================================================== */
 
 function finish() {
 
-  game.classList.add("hidden");
-
-  quiz.classList.add("hidden");
-
-  result.classList.remove("hidden");
+  game.classList.add(
+    "hidden"
+  );
 
 
-  document.getElementById("score").textContent =
+  quiz.classList.add(
+    "hidden"
+  );
+
+
+  result.classList.remove(
+    "hidden"
+  );
+
+
+  document.getElementById(
+    "score"
+  ).textContent =
     `${score} / ${stages.length} respuestas correctas`;
 
 
   let message;
 
 
-  if (score === stages.length) {
+  if (
+    score === stages.length
+  ) {
 
     message =
       "¡Excelente! Tenés una visión muy clara del recorrido histórico.";
 
   }
 
-  else if (score >= 5) {
+  else if (
+    score >= 5
+  ) {
 
     message =
       "¡Muy bien! Ya conocés los principales momentos del recorrido.";
@@ -1043,30 +1419,38 @@ function finish() {
   }
 
 
-  document.getElementById("resultText").textContent =
+  document.getElementById(
+    "resultText"
+  ).textContent =
     message;
 
 
   result.scrollIntoView({
+
     behavior: "smooth",
+
     block: "center"
+
   });
 
 }
 
 
-/* =========================================================
+
+/* =====================================================
    REINICIAR
-   ========================================================= */
+===================================================== */
 
 function restart() {
 
   current = -1;
+
   score = 0;
+
   answered = false;
 
 
-  /* Limpiamos el cuestionario */
+  /* Limpiar pregunta */
 
   question.textContent = "";
 
@@ -1074,64 +1458,102 @@ function restart() {
 
   feedback.textContent = "";
 
-  nextButton.classList.add("hidden");
+
+  nextButton.classList.add(
+    "hidden"
+  );
 
 
-  /* Restauramos la línea del tiempo */
+  /* Reiniciar timeline */
 
   renderTimeline();
 
-  bar.style.width = "0%";
+
+  bar.style.width =
+    "0%";
 
 
-  /* Volvemos a la pantalla inicial */
+  /* Pantallas */
 
-  result.classList.add("hidden");
+  result.classList.add(
+    "hidden"
+  );
 
-  quiz.classList.add("hidden");
+  quiz.classList.add(
+    "hidden"
+  );
 
-  game.classList.remove("hidden");
+  game.classList.remove(
+    "hidden"
+  );
 
+
+  /* Pantalla inicial */
 
   stageTitle.textContent =
     "Comenzá el viaje";
 
 
   stageText.innerHTML = `
+
     <p>
-      Tu misión es recorrer algunos de los momentos que cambiaron
-      la historia de las ideas sobre la evolución.
+      Tu misión es recorrer algunos de los momentos
+      que cambiaron la historia de las ideas sobre la evolución.
     </p>
+
   `;
 
 
-  /* Creamos el botón inicial */
+  const button =
+    document.createElement(
+      "button"
+    );
 
-  const button = document.createElement("button");
 
-  button.textContent = "🚀 Empezar";
+  button.textContent =
+    "🚀 Empezar";
 
-  button.addEventListener("click", startGame);
 
-  stageText.appendChild(button);
+  button.addEventListener(
+    "click",
+    startGame
+  );
+
+
+  stageText.appendChild(
+    button
+  );
 
 }
 
 
-/* =========================================================
-   EVENTOS DE LOS BOTONES FIJOS
-   ========================================================= */
 
-startButton.addEventListener("click", startGame);
+/* =====================================================
+   BOTONES PRINCIPALES
+===================================================== */
 
-nextButton.addEventListener("click", nextStage);
+startButton.addEventListener(
+  "click",
+  startGame
+);
 
-restartButton.addEventListener("click", restart);
+
+nextButton.addEventListener(
+  "click",
+  nextStage
+);
 
 
-/* =========================================================
-   INICIO
-   ========================================================= */
+restartButton.addEventListener(
+  "click",
+  restart
+);
+
+
+
+/* =====================================================
+   INICIAR LÍNEA DEL TIEMPO
+===================================================== */
 
 renderTimeline();
 
@@ -1139,14 +1561,3 @@ renderTimeline();
 
 </body>
 </html>
-
-
-
- 
-
- 
-  
- 
-
-
- 
