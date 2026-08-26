@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El viaje de la evolución</title>
+
 <style>
+
 :root {
   --bg: #171717;
   --card: #ffffff;
@@ -18,40 +20,48 @@
   --border: #e5e5e5;
   --shadow: 0 12px 30px rgba(0,0,0,.35);
 }
+
 * {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--bg);
   color: var(--ink);
 }
+
 header {
   padding: 40px 20px;
   text-align: center;
   background: linear-gradient(135deg, #e94f9d, #7657c8);
   color: #ffffff;
 }
+
 header h1 {
   margin: 0 0 10px;
   font-size: clamp(2rem, 5vw, 3.4rem);
 }
+
 header p {
   margin: 0 auto;
   max-width: 700px;
   font-size: 1.08rem;
   line-height: 1.5;
 }
+
 main {
   width: 100%;
   max-width: 1050px;
   margin: auto;
   padding: 25px 16px 50px;
 }
+
 .card {
   background: #ffffff;
   color: #171717;
@@ -60,15 +70,15 @@ main {
   margin: 18px 0;
   box-shadow: var(--shadow);
 }
+
 .card p {
   line-height: 1.6;
 }
+
 h2 {
   margin-top: 0;
   color: #6846b7;
 }
-
-
 
 button {
   border: 0;
@@ -84,11 +94,14 @@ button {
   line-height: normal !important;
   opacity: 1 !important;
   visibility: visible !important;
+  transition: transform .2s, filter .2s;
 }
 
 button:hover {
   background-color: #d63b89 !important;
   color: white !important;
+  transform: translateY(-2px);
+  filter: brightness(1.08);
 }
 
 button:active {
@@ -109,124 +122,161 @@ button.wrong {
   background-color: #d95757 !important;
   color: white !important;
 }
+
 .choice {
-display: block;
-width: 100%;
-text-align: left;
-margin: 10px 0;
-background: #ffffff;
-color: #171717 !important;
-border: 2px solid #e5e5e5;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 10px 0;
+  background: #ffffff !important;
+  color: #171717 !important;
+  border: 2px solid #e5e5e5;
 }
+
 .choice:hover {
-  background: #f5f5f5;
+  background: #f5f5f5 !important;
   color: #171717 !important;
 }
+
 .choice:disabled {
-cursor: default;
-transform: none;
+  cursor: default;
+  transform: none;
 }
+
 .grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
 }
+
 .event {
-border: 2px solid #e5e5e5;
-border-radius: 18px;
-padding: 18px;
-background: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 18px;
+  background: #ffffff;
 }
+
 .event strong {
-color: #e94f9d;
-font-size: 1.2rem;
+  color: #e94f9d;
+  font-size: 1.2rem;
 }
+
 .event h3 {
-margin-bottom: 8px;
+  margin-bottom: 8px;
 }
+
 .progress {
-height: 12px;
-background: #eeeeee;
-border-radius: 99px;
-overflow: hidden;
-margin: 14px 0;
+  height: 12px;
+  background: #eeeeee;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 14px 0;
 }
+
 .bar {
-height: 100%;
-width: 0;
-background: linear-gradient(90deg, #e94f9d, #7657c8);
-transition: .4s;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #e94f9d, #7657c8);
+  transition: .4s;
 }
+
 .hidden {
-display: none;
+  display: none !important;
 }
+
 .score {
-font-size: 1.35rem;
-font-weight: bold;
-text-align: center;
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-align: center;
 }
+
 .badge {
-display: inline-block;
-padding: 7px 12px;
-border-radius: 99px;
-background: #ffe1f0;
-color: #9a2861;
-font-weight: bold;
-margin: 4px;
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 99px;
+  background: #ffe1f0;
+  color: #9a2861;
+  font-weight: bold;
+  margin: 4px;
 }
+
 .small {
-font-size: .92rem;
-color: #665d6d;
+  font-size: .92rem;
+  color: #665d6d;
 }
+
 footer {
-text-align: center;
-padding: 25px;
-color: #aaaaaa;
+  text-align: center;
+  padding: 25px;
+  color: #aaaaaa;
 }
+
+#nextButton {
+  margin-top: 12px;
+}
+
 @media (max-width: 600px) {
-header {
-padding: 30px 16px;
+
+  header {
+    padding: 30px 16px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: .98rem;
+  }
+
+  main {
+    padding: 15px 10px 35px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 18px;
+    margin: 14px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  .choice {
+    padding: 15px;
+  }
+
 }
-header h1 {
-font-size: 2rem;
-}
-header p {
-font-size: .98rem;
-}
-main {
-padding: 15px 10px 35px;
-}
-.card {
-padding: 18px;
-border-radius: 18px;
-margin: 14px 0;
-}
-.grid {
-grid-template-columns: 1fr;
-}
-button {
-width: 100%;
-padding: 14px 16px;
-font-size: 1rem;
-}
-.choice {
-padding: 15px;
-}
-}
+
 </style>
 </head>
+
 <body>
+
 <header>
+
   <h1>🧬 El viaje de la evolución</h1>
+
   <p>
     Un juego interactivo para descubrir cómo fue cambiando
     nuestra forma de entender la evolución.
   </p>
+
 </header>
+
 
 <main>
 
+
 <section class="card">
+
   <h2>🎮 ¿Cómo se juega?</h2>
 
   <p>
@@ -259,6 +309,7 @@ padding: 15px;
     </div>
 
   </div>
+
 </section>
 
 
@@ -305,6 +356,11 @@ padding: 15px;
 
   <p id="feedback"></p>
 
+  <!-- ESTE ES EL ÚNICO BOTÓN DE SIGUIENTE -->
+  <button id="nextButton" class="hidden" onclick="nextStage()">
+    ➡️ Siguiente etapa
+  </button>
+
 </section>
 
 
@@ -335,171 +391,191 @@ padding: 15px;
 
 </section>
 
+
 </main>
 
 
 <footer>
+
   Hecho para aprender jugando · Historia de la evolución 🧬
+
 </footer>
 
 
 <script>
 
+
 const stages = [
 
-{
-  year: "Antigüedad",
-  title: "Las primeras preguntas",
+  {
+    year: "Antigüedad",
 
-  text:
-  "Mucho antes de Darwin, distintas sociedades intentaban explicar por qué existían tantos seres vivos y cómo habían aparecido. Durante siglos convivieron explicaciones religiosas, filosóficas y naturales.",
+    title: "Las primeras preguntas",
 
-  q: "¿Qué caracterizó a esta etapa?",
+    text:
+    "Mucho antes de Darwin, distintas sociedades intentaban explicar por qué existían tantos seres vivos y cómo habían aparecido. Durante siglos convivieron explicaciones religiosas, filosóficas y naturales.",
 
-  options: [
-    "Ya existía la teoría moderna de la evolución",
-    "Había distintas explicaciones sobre el origen y la diversidad de los seres vivos",
-    "Ya se conocía el ADN"
-  ],
+    q: "¿Qué caracterizó a esta etapa?",
 
-  answer: 1,
+    options: [
+      "Ya existía la teoría moderna de la evolución",
+      "Había distintas explicaciones sobre el origen y la diversidad de los seres vivos",
+      "Ya se conocía el ADN"
+    ],
 
-  why:
-  "Correcto. Durante mucho tiempo existieron diferentes explicaciones filosóficas, religiosas y naturales sobre la vida."
-},
+    answer: 1,
 
-{
-  year: "1809",
-  title: "Jean-Baptiste Lamarck",
+    why:
+    "Correcto. Durante mucho tiempo existieron diferentes explicaciones filosóficas, religiosas y naturales sobre la vida."
+  },
 
-  text:
-  "Lamarck fue un naturalista francés. Propuso una de las primeras explicaciones sistemáticas sobre cómo podían cambiar los seres vivos a lo largo del tiempo. Su propuesta no coincide con la explicación evolutiva actual, pero fue importante históricamente.",
 
-  q: "¿Por qué Lamarck es importante en esta historia?",
+  {
+    year: "1809",
 
-  options: [
-    "Porque descubrió la estructura del ADN",
-    "Porque planteó una explicación temprana sobre el cambio de los seres vivos",
-    "Porque fue quien publicó El origen de las especies"
-  ],
+    title: "Jean-Baptiste Lamarck",
 
-  answer: 1,
+    text:
+    "Lamarck fue un naturalista francés. Propuso una de las primeras explicaciones sistemáticas sobre cómo podían cambiar los seres vivos a lo largo del tiempo. Su propuesta no coincide con la explicación evolutiva actual, pero fue importante históricamente.",
 
-  why:
-  "Exacto. Lamarck ayudó a instalar la idea de que las especies podían cambiar con el tiempo."
-},
+    q: "¿Por qué Lamarck es importante en esta historia?",
 
-{
-  year: "1859",
-  title: "Charles Darwin",
+    options: [
+      "Porque descubrió la estructura del ADN",
+      "Porque planteó una explicación temprana sobre el cambio de los seres vivos",
+      "Porque fue quien publicó El origen de las especies"
+    ],
 
-  text:
-  "Darwin fue un naturalista británico. En 1859 publicó El origen de las especies, una obra que presentó la selección natural como una explicación de cómo podían producirse cambios evolutivos a lo largo de generaciones.",
+    answer: 1,
 
-  q: "¿Qué presentó Darwin como mecanismo central de la evolución?",
+    why:
+    "Exacto. Lamarck ayudó a instalar la idea de que las especies podían cambiar con el tiempo."
+  },
 
-  options: [
-    "La selección natural",
-    "La electricidad",
-    "La teoría celular"
-  ],
 
-  answer: 0,
+  {
+    year: "1859",
 
-  why:
-  "¡Muy bien! La selección natural fue una de las ideas centrales de Darwin."
-},
+    title: "Charles Darwin",
 
-{
-  year: "1865",
-  title: "Gregor Mendel",
+    text:
+    "Darwin fue un naturalista británico. En 1859 publicó El origen de las especies, una obra que presentó la selección natural como una explicación de cómo podían producirse cambios evolutivos a lo largo de generaciones.",
 
-  text:
-  "Mendel fue un monje y científico que estudió cómo se transmitían determinadas características entre generaciones mediante experimentos con plantas. Sus trabajos ayudaron posteriormente a comprender la herencia.",
+    q: "¿Qué presentó Darwin como mecanismo central de la evolución?",
 
-  q: "¿Qué estudió principalmente Mendel?",
+    options: [
+      "La selección natural",
+      "La electricidad",
+      "La teoría celular"
+    ],
 
-  options: [
-    "La herencia de características",
-    "Los planetas",
-    "La edad de las rocas"
-  ],
+    answer: 0,
 
-  answer: 0,
+    why:
+    "¡Muy bien! La selección natural fue una de las ideas centrales de Darwin."
+  },
 
-  why:
-  "Correcto. Sus experimentos fueron fundamentales para la historia de la genética."
-},
 
-{
-  year: "1869",
-  title: "El ADN entra en escena",
+  {
+    year: "1865",
 
-  text:
-  "Friedrich Miescher fue un científico suizo que aisló por primera vez una sustancia que hoy sabemos que era ADN. En aquel momento todavía no se conocía su función ni su importancia.",
+    title: "Gregor Mendel",
 
-  q: "¿Qué tiene de especial 1869?",
+    text:
+    "Mendel fue un monje y científico que estudió cómo se transmitían determinadas características entre generaciones mediante experimentos con plantas. Sus trabajos ayudaron posteriormente a comprender la herencia.",
 
-  options: [
-    "Se publicó El origen de las especies",
-    "Miescher aisló por primera vez una sustancia que hoy identificamos como ADN",
-    "Se descubrió la selección natural"
-  ],
+    q: "¿Qué estudió principalmente Mendel?",
 
-  answer: 1,
+    options: [
+      "La herencia de características",
+      "Los planetas",
+      "La edad de las rocas"
+    ],
 
-  why:
-  "Exacto. Miescher aisló una sustancia que llamó inicialmente 'nucleína', relacionada con lo que hoy conocemos como ADN."
-},
+    answer: 0,
 
-{
-  year: "1900s",
-  title: "Evolución + genética",
+    why:
+    "Correcto. Sus experimentos fueron fundamentales para la historia de la genética."
+  },
 
-  text:
-  "Durante el siglo XX, las ideas de Darwin sobre evolución y los estudios sobre herencia comenzaron a conectarse. Esta combinación permitió construir una explicación más completa de cómo cambian las poblaciones a través del tiempo.",
 
-  q: "¿Qué ocurrió durante el siglo XX?",
+  {
+    year: "1869",
 
-  options: [
-    "Se abandonó el estudio de la herencia",
-    "Se conectaron las ideas de evolución con la genética",
-    "Se dejó de estudiar el ADN"
-  ],
+    title: "El ADN entra en escena",
 
-  answer: 1,
+    text:
+    "Friedrich Miescher fue un científico suizo que aisló por primera vez una sustancia que hoy sabemos que era ADN. En aquel momento todavía no se conocía su función ni su importancia.",
 
-  why:
-  "¡Correcto! La genética ayudó a explicar cómo podía heredarse la variación sobre la que actúa la selección natural."
-},
+    q: "¿Qué tiene de especial 1869?",
 
-{
-  year: "1953",
-  title: "La estructura del ADN",
+    options: [
+      "Se publicó El origen de las especies",
+      "Miescher aisló por primera vez una sustancia que hoy identificamos como ADN",
+      "Se descubrió la selección natural"
+    ],
 
-  text:
-  "James Watson y Francis Crick propusieron un modelo de la estructura de doble hélice del ADN, apoyándose también en información obtenida por otros científicos, especialmente los trabajos de Rosalind Franklin y Maurice Wilkins.",
+    answer: 1,
 
-  q: "¿Qué se propuso en 1953?",
+    why:
+    "Exacto. Miescher aisló una sustancia que llamó inicialmente 'nucleína', relacionada con lo que hoy conocemos como ADN."
+  },
 
-  options: [
-    "La estructura de doble hélice del ADN",
-    "La primera teoría sobre la vida",
-    "La selección natural"
-  ],
 
-  answer: 0,
+  {
+    year: "1900s",
 
-  why:
-  "Correcto. El modelo de doble hélice fue un momento clave para entender cómo está organizado el ADN."
-}
+    title: "Evolución + genética",
+
+    text:
+    "Durante el siglo XX, las ideas de Darwin sobre evolución y los estudios sobre herencia comenzaron a conectarse. Esta combinación permitió construir una explicación más completa de cómo cambian las poblaciones a través del tiempo.",
+
+    q: "¿Qué ocurrió durante el siglo XX?",
+
+    options: [
+      "Se abandonó el estudio de la herencia",
+      "Se conectaron las ideas de evolución con la genética",
+      "Se dejó de estudiar el ADN"
+    ],
+
+    answer: 1,
+
+    why:
+    "¡Correcto! La genética ayudó a explicar cómo podía heredarse la variación sobre la que actúa la selección natural."
+  },
+
+
+  {
+    year: "1953",
+
+    title: "La estructura del ADN",
+
+    text:
+    "James Watson y Francis Crick propusieron un modelo de la estructura de doble hélice del ADN, apoyándose también en información obtenida por otros científicos, especialmente los trabajos de Rosalind Franklin y Maurice Wilkins.",
+
+    q: "¿Qué se propuso en 1953?",
+
+    options: [
+      "La estructura de doble hélice del ADN",
+      "La primera teoría sobre la vida",
+      "La selección natural"
+    ],
+
+    answer: 0,
+
+    why:
+    "Correcto. El modelo de doble hélice fue un momento clave para entender cómo está organizado el ADN."
+  }
 
 ];
 
 
 let current = -1;
+
 let score = 0;
+
 let answered = false;
+
 
 
 function renderTimeline() {
@@ -517,7 +593,7 @@ function renderTimeline() {
       <p>
         ${i === 0
           ? "Disponible para comenzar."
-          : "🔒 Desbloqueá esta etapa jugando."
+          : "🔒 Desbloqueá esta etapa."
         }
       </p>
 
@@ -526,6 +602,7 @@ function renderTimeline() {
   `).join("");
 
 }
+
 
 
 function updateTimeline() {
@@ -550,20 +627,24 @@ function updateTimeline() {
 
   });
 
+
   document.getElementById("bar").style.width =
     ((Math.max(current, 0) + 1) / stages.length * 100) + "%";
 
 }
 
 
+
 function startGame() {
 
   current = 0;
+
   score = 0;
 
   showStage();
 
 }
+
 
 
 function showStage() {
@@ -572,8 +653,10 @@ function showStage() {
 
   const s = stages[current];
 
+
   document.getElementById("stageTitle").textContent =
     `${s.year} — ${s.title}`;
+
 
   document.getElementById("stageText").innerHTML = `
 
@@ -585,27 +668,45 @@ function showStage() {
 
   `;
 
+
   document.getElementById("quiz").classList.add("hidden");
 
   document.getElementById("result").classList.add("hidden");
 
+
+  // Ocultamos el botón único hasta responder
+  document.getElementById("nextButton").classList.add("hidden");
+
+
   updateTimeline();
 
+
   document.getElementById("game").scrollIntoView({
+
     behavior: "smooth",
+
     block: "center"
+
   });
 
 }
+
 
 
 function showQuiz() {
 
   const s = stages[current];
 
+
+  // Ocultar el mismo botón al comenzar una pregunta
+  document.getElementById("nextButton").classList.add("hidden");
+
+
   document.getElementById("question").textContent = s.q;
 
+
   const c = document.getElementById("choices");
+
 
   c.innerHTML = s.options.map((x, i) => `
 
@@ -620,38 +721,55 @@ function showQuiz() {
 
   `).join("");
 
+
   document.getElementById("feedback").textContent = "";
+
 
   document.getElementById("quiz").classList.remove("hidden");
 
+
   document.getElementById("quiz").scrollIntoView({
+
     behavior: "smooth",
+
     block: "center"
+
   });
 
 }
+
 
 
 function answer(i) {
 
   if (answered) return;
 
+
   answered = true;
+
 
   const s = stages[current];
 
+
   const buttons = document.querySelectorAll(".choice");
+
 
   buttons.forEach((b, n) => {
 
     b.disabled = true;
 
+
     if (n === s.answer) {
+
       b.classList.add("correct");
+
     }
 
+
     if (n === i && i !== s.answer) {
+
       b.classList.add("wrong");
+
     }
 
   });
@@ -664,6 +782,7 @@ function answer(i) {
 
     score++;
 
+
     f.innerHTML =
       "🎉 <b>¡Correcto!</b> " + s.why;
 
@@ -675,35 +794,47 @@ function answer(i) {
   }
 
 
-  const next = document.createElement("button");
+  /*
+    IMPORTANTE:
+
+    Acá ya NO creamos un botón nuevo.
+
+    Usamos siempre el mismo botón
+    que está en el HTML.
+  */
+
+  const next = document.getElementById("nextButton");
+
 
   next.textContent =
     current === stages.length - 1
       ? "🏆 Ver resultado"
       : "➡️ Siguiente etapa";
 
-  next.style.marginTop = "12px";
 
-  next.onclick = () => {
-
-    current++;
-
-    if (current < stages.length) {
-
-      showStage();
-
-    } else {
-
-      finish();
-
-    }
-
-  };
-
-
-  document.getElementById("quiz").appendChild(next);
+  next.classList.remove("hidden");
 
 }
+
+
+
+function nextStage() {
+
+  current++;
+
+
+  if (current < stages.length) {
+
+    showStage();
+
+  } else {
+
+    finish();
+
+  }
+
+}
+
 
 
 function finish() {
@@ -718,23 +849,57 @@ function finish() {
   document.getElementById("score").textContent =
     `${score} / ${stages.length} respuestas correctas`;
 
-let msg =
-score === stages.length
-? "¡Excelente! Tenés una visión muy clara del recorrido histórico."
-: score >= 5
-? "¡Muy bien! Ya conocés los principales momentos del recorrido."
-: "¡Buen comienzo! Podés volver a jugar para reforzar los momentos históricos.";
- document.getElementById("resultText").textContent = msg;
+
+  let msg;
+
+
+  if (score === stages.length) {
+
+    msg =
+      "¡Excelente! Tenés una visión muy clara del recorrido histórico.";
+
+  } else if (score >= 5) {
+
+    msg =
+      "¡Muy bien! Ya conocés los principales momentos del recorrido.";
+
+  } else {
+
+    msg =
+      "¡Buen comienzo! Podés volver a jugar para reforzar los momentos históricos.";
+
+  }
+
+
+  document.getElementById("resultText").textContent = msg;
+
+
   document.getElementById("result").scrollIntoView({
+
     behavior: "smooth",
+
     block: "center"
- });
+
+  });
+
 }
+
+
+
 function restart() {
- document.getElementById("game").classList.remove("hidden");
- startGame();
+
+  document.getElementById("game").classList.remove("hidden");
+
+  document.getElementById("result").classList.add("hidden");
+
+  document.getElementById("nextButton").classList.add("hidden");
+
+  startGame();
+
 }
+
 renderTimeline();
+
 </script>
 
 </body>
