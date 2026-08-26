@@ -9,12 +9,11 @@
 
 <style>
 
-/* =========================
-   COLORES
-========================= */
+/* ================================
+   VARIABLES
+================================ */
 
 :root {
-
   --bg: #171717;
   --card: #ffffff;
   --ink: #171717;
@@ -34,9 +33,9 @@
 }
 
 
-/* =========================
+/* ================================
    GENERAL
-========================= */
+================================ */
 
 * {
   box-sizing: border-box;
@@ -55,21 +54,25 @@ body {
     Helvetica,
     sans-serif;
 
-  background: var(--bg);
+  background:
+    var(--bg);
 
-  color: var(--ink);
+  color:
+    var(--ink);
 }
 
 
-/* =========================
-   ENCABEZADO
-========================= */
+/* ================================
+   HEADER
+================================ */
 
 header {
 
-  padding: 40px 20px;
+  padding:
+    40px 20px;
 
-  text-align: center;
+  text-align:
+    center;
 
   background:
     linear-gradient(
@@ -78,7 +81,8 @@ header {
       #7657c8
     );
 
-  color: white;
+  color:
+    white;
 }
 
 header h1 {
@@ -87,7 +91,11 @@ header h1 {
     0 0 10px;
 
   font-size:
-    clamp(2rem, 5vw, 3.4rem);
+    clamp(
+      2rem,
+      5vw,
+      3.4rem
+    );
 }
 
 header p {
@@ -106,13 +114,14 @@ header p {
 }
 
 
-/* =========================
-   CONTENIDO
-========================= */
+/* ================================
+   MAIN
+================================ */
 
 main {
 
-  width: 100%;
+  width:
+    100%;
 
   max-width:
     1050px;
@@ -123,6 +132,11 @@ main {
   padding:
     25px 16px 50px;
 }
+
+
+/* ================================
+   TARJETAS
+================================ */
 
 .card {
 
@@ -161,9 +175,9 @@ h2 {
 }
 
 
-/* =========================
+/* ================================
    BOTONES
-========================= */
+================================ */
 
 button {
 
@@ -227,9 +241,9 @@ button:disabled {
 }
 
 
-/* =========================
+/* ================================
    OPCIONES
-========================= */
+================================ */
 
 .choice {
 
@@ -295,9 +309,38 @@ button:disabled {
 }
 
 
-/* =========================
+/* ================================
+   INFORMACIÓN DE ETAPA
+================================ */
+
+.stage-number {
+
+  display:
+    inline-block;
+
+  padding:
+    6px 12px;
+
+  margin-bottom:
+    10px;
+
+  border-radius:
+    999px;
+
+  background:
+    #ffe1f0;
+
+  color:
+    #9a2861;
+
+  font-weight:
+    bold;
+}
+
+
+/* ================================
    GRID
-========================= */
+================================ */
 
 .grid {
 
@@ -307,7 +350,10 @@ button:disabled {
   grid-template-columns:
     repeat(
       auto-fit,
-      minmax(220px, 1fr)
+      minmax(
+        220px,
+        1fr
+      )
     );
 
   gap:
@@ -315,9 +361,9 @@ button:disabled {
 }
 
 
-/* =========================
+/* ================================
    LÍNEA DEL TIEMPO
-========================= */
+================================ */
 
 .event {
 
@@ -365,13 +411,18 @@ button:disabled {
 
   box-shadow:
     0 0 0 3px
-    rgba(118,87,200,.12);
+    rgba(
+      118,
+      87,
+      200,
+      .12
+    );
 }
 
 
-/* =========================
+/* ================================
    PROGRESO
-========================= */
+================================ */
 
 .progress {
 
@@ -411,9 +462,40 @@ button:disabled {
 }
 
 
-/* =========================
-   ELEMENTOS
-========================= */
+/* ================================
+   FEEDBACK
+================================ */
+
+.feedback {
+
+  line-height:
+    1.5;
+
+  margin-top:
+    15px;
+}
+
+
+/* ================================
+   BOTÓN SIGUIENTE
+================================ */
+
+#nextButton {
+
+  margin-top:
+    15px;
+}
+
+
+/* ================================
+   UTILIDADES
+================================ */
+
+.hidden {
+
+  display:
+    none !important;
+}
 
 .score {
 
@@ -460,36 +542,10 @@ button:disabled {
     #665d6d;
 }
 
-.feedback {
 
-  line-height:
-    1.5;
-
-  margin-top:
-    15px;
-}
-
-#nextButton {
-
-  margin-top:
-    15px;
-}
-
-
-/* =========================
-   OCULTAR
-========================= */
-
-.hidden {
-
-  display:
-    none !important;
-}
-
-
-/* =========================
+/* ================================
    FOOTER
-========================= */
+================================ */
 
 footer {
 
@@ -504,9 +560,9 @@ footer {
 }
 
 
-/* =========================
+/* ================================
    CELULAR
-========================= */
+================================ */
 
 @media (max-width: 600px) {
 
@@ -580,9 +636,9 @@ footer {
 <body>
 
 
-<!-- ==================================================
-     ENCABEZADO
-================================================== -->
+<!-- ================================
+     HEADER
+================================ -->
 
 <header>
 
@@ -602,9 +658,9 @@ footer {
 <main>
 
 
-<!-- ==================================================
+<!-- ================================
      CÓMO SE JUEGA
-================================================== -->
+================================ -->
 
 <section class="card">
 
@@ -685,12 +741,47 @@ footer {
 
 
 
-<!-- ==================================================
+<!-- ================================
+     INFORMACIÓN DE LA ETAPA
+     
+     ESTA SECCIÓN ESTÁ ARRIBA
+     DE LA PREGUNTA
+================================ -->
+
+<section
+  class="card"
+  id="game"
+>
+
+  <span
+    class="stage-number"
+    id="stageNumber"
+  >
+    Etapa 1
+  </span>
+
+
+  <h2
+    id="stageTitle"
+  >
+  </h2>
+
+
+  <div
+    id="stageText"
+  >
+  </div>
+
+</section>
+
+
+
+<!-- ================================
      PREGUNTA
      
-     AHORA ESTÁ DIRECTAMENTE DESPUÉS
-     DE "CÓMO SE JUEGA"
-================================================== -->
+     ESTÁ INMEDIATAMENTE DESPUÉS
+     DE LA INFORMACIÓN
+================================ -->
 
 <section
   class="card"
@@ -702,11 +793,15 @@ footer {
   </h2>
 
 
-  <p id="question">
+  <p
+    id="question"
+  >
   </p>
 
 
-  <div id="choices">
+  <div
+    id="choices"
+  >
   </div>
 
 
@@ -718,8 +813,8 @@ footer {
 
 
   <!--
-      ESTE ES EL ÚNICO BOTÓN
-      DE SIGUIENTE ETAPA
+    ESTE ES EL ÚNICO
+    BOTÓN DE SIGUIENTE
   -->
 
   <button
@@ -733,9 +828,12 @@ footer {
 
 
 
-<!-- ==================================================
+<!-- ================================
      LÍNEA DEL TIEMPO
-================================================== -->
+     
+     NO HAY INFORMACIÓN DE ETAPA
+     DESPUÉS DE ESTA SECCIÓN
+================================ -->
 
 <section class="card">
 
@@ -765,33 +863,9 @@ footer {
 
 
 
-<!-- ==================================================
-     ETAPA / INFORMACIÓN
-================================================== -->
-
-<section
-  class="card"
-  id="game"
->
-
-  <h2
-    id="stageTitle"
-  >
-  </h2>
-
-
-  <div
-    id="stageText"
-  >
-  </div>
-
-</section>
-
-
-
-<!-- ==================================================
+<!-- ================================
      RESULTADO
-================================================== -->
+================================ -->
 
 <section
   class="card hidden"
@@ -826,9 +900,9 @@ footer {
 
 
 
-<!-- ==================================================
+<!-- ================================
      DATO FINAL
-================================================== -->
+================================ -->
 
 <section class="card">
 
@@ -863,7 +937,7 @@ footer {
 
 
 /* =====================================================
-   DATOS DE LAS ETAPAS
+   ETAPAS
 ===================================================== */
 
 const stages = [
@@ -1106,15 +1180,14 @@ const stages = [
    VARIABLES
 ===================================================== */
 
-/*
-   Arrancamos directamente en la primera etapa.
-*/
+let current =
+  0;
 
-let current = 0;
+let score =
+  0;
 
-let score = 0;
-
-let answered = false;
+let answered =
+  false;
 
 
 
@@ -1122,29 +1195,9 @@ let answered = false;
    ELEMENTOS
 ===================================================== */
 
-const timeline =
+const stageNumber =
   document.getElementById(
-    "timeline"
-  );
-
-const bar =
-  document.getElementById(
-    "bar"
-  );
-
-const game =
-  document.getElementById(
-    "game"
-  );
-
-const quiz =
-  document.getElementById(
-    "quiz"
-  );
-
-const result =
-  document.getElementById(
-    "result"
+    "stageNumber"
   );
 
 const stageTitle =
@@ -1177,6 +1230,31 @@ const nextButton =
     "nextButton"
   );
 
+const timeline =
+  document.getElementById(
+    "timeline"
+  );
+
+const bar =
+  document.getElementById(
+    "bar"
+  );
+
+const game =
+  document.getElementById(
+    "game"
+  );
+
+const quiz =
+  document.getElementById(
+    "quiz"
+  );
+
+const result =
+  document.getElementById(
+    "result"
+  );
+
 const restartButton =
   document.getElementById(
     "restartButton"
@@ -1190,7 +1268,8 @@ const restartButton =
 
 function renderTimeline() {
 
-  timeline.innerHTML = "";
+  timeline.innerHTML =
+    "";
 
 
   stages.forEach(
@@ -1224,7 +1303,7 @@ function renderTimeline() {
           ${
             index === 0
             ? "Disponible."
-            : "🔒 Desbloqueá esta etapa."
+            : "🔒 Bloqueada"
           }
         </p>
 
@@ -1304,8 +1383,10 @@ function updateTimeline() {
 
 
   const progress =
-    ((current + 1) /
-    stages.length) * 100;
+    (
+      (current + 1) /
+      stages.length
+    ) * 100;
 
 
   bar.style.width =
@@ -1316,7 +1397,7 @@ function updateTimeline() {
 
 
 /* =====================================================
-   MOSTRAR ETAPA Y PREGUNTA
+   MOSTRAR ETAPA
 ===================================================== */
 
 function showStage() {
@@ -1332,6 +1413,10 @@ function showStage() {
   /* =========================
      INFORMACIÓN
   ========================= */
+
+  stageNumber.textContent =
+    `Etapa ${current + 1} de ${stages.length}`;
+
 
   stageTitle.textContent =
     `${stage.year} — ${stage.title}`;
@@ -1354,8 +1439,6 @@ function showStage() {
     stage.q;
 
 
-  /* Limpiar opciones anteriores */
-
   choices.innerHTML =
     "";
 
@@ -1370,7 +1453,7 @@ function showStage() {
 
 
   /* =========================
-     CREAR OPCIONES
+     OPCIONES
   ========================= */
 
   stage.options.forEach(
@@ -1392,7 +1475,11 @@ function showStage() {
 
       button.addEventListener(
         "click",
-        () => answer(index)
+        () => {
+
+          answer(index);
+
+        }
       );
 
 
@@ -1405,21 +1492,8 @@ function showStage() {
 
 
   /* =========================
-     MOSTRAR TODO
+     ACTUALIZAR TIMELINE
   ========================= */
-
-  game.classList.remove(
-    "hidden"
-  );
-
-  quiz.classList.remove(
-    "hidden"
-  );
-
-  result.classList.add(
-    "hidden"
-  );
-
 
   updateTimeline();
 
@@ -1434,11 +1508,6 @@ function showStage() {
 function answer(
   selectedIndex
 ) {
-
-  /*
-    Evita que se pueda
-    responder más de una vez.
-  */
 
   if (
     answered
@@ -1463,9 +1532,7 @@ function answer(
     );
 
 
-  /* =========================
-     BLOQUEAR OPCIONES
-  ========================= */
+  /* Bloquear respuestas */
 
   buttons.forEach(
     (button, index) => {
@@ -1474,10 +1541,7 @@ function answer(
         true;
 
 
-      /*
-        Siempre mostramos
-        cuál era la correcta.
-      */
+      /* Correcta */
 
       if (
         index === stage.answer
@@ -1490,10 +1554,7 @@ function answer(
       }
 
 
-      /*
-        Si eligió mal,
-        marcamos su elección.
-      */
+      /* Incorrecta */
 
       if (
         index === selectedIndex &&
@@ -1511,7 +1572,7 @@ function answer(
 
 
   /* =========================
-     CONTAR PUNTOS
+     FEEDBACK
   ========================= */
 
   if (
@@ -1537,7 +1598,7 @@ function answer(
 
 
   /* =========================
-     ÚNICO BOTÓN SIGUIENTE
+     BOTÓN SIGUIENTE
   ========================= */
 
   if (
@@ -1572,26 +1633,17 @@ function answer(
 
 function nextStage() {
 
-  /*
-    Primero ocultamos el botón.
-  */
-
   nextButton.classList.add(
     "hidden"
   );
 
 
-  /*
-    Avanzamos una etapa.
-  */
-
   current++;
 
 
-  /*
-    Si todavía quedan etapas,
-    mostramos la siguiente.
-  */
+  /* =========================
+     TODAVÍA QUEDAN ETAPAS
+  ========================= */
 
   if (
     current < stages.length
@@ -1599,12 +1651,14 @@ function nextStage() {
 
     showStage();
 
+
     /*
-      Llevamos al usuario
-      nuevamente a la pregunta.
+      Volvemos arriba,
+      donde está la información
+      de la nueva etapa.
     */
 
-    quiz.scrollIntoView({
+    game.scrollIntoView({
 
       behavior:
         "smooth",
@@ -1620,10 +1674,9 @@ function nextStage() {
   }
 
 
-  /*
-    Si no quedan etapas,
-    mostramos el resultado.
-  */
+  /* =========================
+     TERMINÓ
+  ========================= */
 
   finish();
 
@@ -1632,7 +1685,7 @@ function nextStage() {
 
 
 /* =====================================================
-   FINAL DEL JUEGO
+   FINAL
 ===================================================== */
 
 function finish() {
@@ -1655,7 +1708,6 @@ function finish() {
   document.getElementById(
     "score"
   ).textContent =
-
     `${score} / ${stages.length} respuestas correctas`;
 
 
@@ -1714,67 +1766,38 @@ function finish() {
 
 function restart() {
 
-  /*
-    Volvemos a la primera etapa.
-  */
-
   current =
     0;
-
 
   score =
     0;
 
-
   answered =
     false;
 
-
-  /*
-    Limpiamos el resultado.
-  */
 
   result.classList.add(
     "hidden"
   );
 
 
-  /*
-    Volvemos a mostrar
-    juego y pregunta.
-  */
-
   game.classList.remove(
     "hidden"
   );
+
 
   quiz.classList.remove(
     "hidden"
   );
 
 
-  /*
-    Restauramos la línea
-    del tiempo.
-  */
-
   renderTimeline();
 
-
-  /*
-    Mostramos la primera etapa
-    y su pregunta.
-  */
 
   showStage();
 
 
-  /*
-    Subimos al principio
-    de la sección del juego.
-  */
-
-  quiz.scrollIntoView({
+  game.scrollIntoView({
 
     behavior:
       "smooth",
@@ -1789,7 +1812,7 @@ function restart() {
 
 
 /* =====================================================
-   BOTÓN SIGUIENTE
+   BOTONES
 ===================================================== */
 
 nextButton.addEventListener(
@@ -1797,11 +1820,6 @@ nextButton.addEventListener(
   nextStage
 );
 
-
-
-/* =====================================================
-   BOTÓN REINICIAR
-===================================================== */
 
 restartButton.addEventListener(
   "click",
@@ -1811,7 +1829,7 @@ restartButton.addEventListener(
 
 
 /* =====================================================
-   INICIAR AUTOMÁTICAMENTE
+   INICIAR
 ===================================================== */
 
 renderTimeline();
