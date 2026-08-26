@@ -10,10 +10,6 @@
 
 <style>
 
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
-
 * {
     box-sizing: border-box;
 }
@@ -89,7 +85,7 @@ main {
 
 
 /* =========================
-   ¿CÓMO SE JUEGA?
+   COMO SE JUEGA
 ========================= */
 
 .instructions {
@@ -124,7 +120,7 @@ main {
 
 
 /* =========================
-   INFORMACIÓN DE LA ETAPA
+   INFORMACIÓN
 ========================= */
 
 #stageCard {
@@ -273,7 +269,6 @@ main {
 
 .main-button:hover {
     background: #d63b89;
-
     transform: translateY(-2px);
 }
 
@@ -392,7 +387,7 @@ footer p {
 .school-logo {
     display: block;
 
-    width: 60px;
+    width: 85px;
 
     max-width: 100%;
 
@@ -443,10 +438,6 @@ footer p {
 <body>
 
 
-<!-- =========================
-     ENCABEZADO
-========================= -->
-
 <header>
 
     <h1>
@@ -463,10 +454,6 @@ footer p {
 
 <main>
 
-
-<!-- =========================
-     CÓMO SE JUEGA
-========================= -->
 
 <section class="card">
 
@@ -547,10 +534,6 @@ footer p {
 
 
 
-<!-- =========================
-     INFORMACIÓN DE LA ETAPA
-========================= -->
-
 <section
     class="card"
     id="stageCard"
@@ -572,10 +555,6 @@ footer p {
 </section>
 
 
-
-<!-- =========================
-     PREGUNTA
-========================= -->
 
 <section
     class="card"
@@ -607,10 +586,6 @@ footer p {
 
 
 
-<!-- =========================
-     LÍNEA DEL TIEMPO
-========================= -->
-
 <section class="card">
 
     <h2>
@@ -633,10 +608,6 @@ footer p {
 </section>
 
 
-
-<!-- =========================
-     RESULTADO
-========================= -->
 
 <section
     class="card hidden"
@@ -665,10 +636,6 @@ footer p {
 
 
 
-<!-- =========================
-     DATO FINAL
-========================= -->
-
 <section class="card">
 
     <h2>
@@ -689,21 +656,11 @@ footer p {
 
 
 
-<!-- =========================
-     PIE DE PÁGINA
-========================= -->
-
 <footer>
 
     <p>
         Hecho para aprender jugando · Historia de la evolución 🧬
     </p>
-
-
-    <!--
-        PONÉ TU LOGO EN LA MISMA CARPETA
-        Y LLAMALO: logo-escuela.png
-    -->
 
     <img
         src="logo-escuela.png"
@@ -716,10 +673,6 @@ footer p {
 
 
 <script>
-
-/* =====================================================
-   ETAPAS
-===================================================== */
 
 const stages = [
 
@@ -921,20 +874,12 @@ const stages = [
 ];
 
 
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 let currentStage = 0;
 
 let score = 0;
 
 let hasAnswered = false;
 
-
-/* =====================================================
-   ELEMENTOS
-===================================================== */
 
 const stageNumber =
     document.getElementById("stageNumber");
@@ -975,10 +920,6 @@ const resultText =
 const restartButton =
     document.getElementById("restartButton");
 
-
-/* =====================================================
-   CREAR LÍNEA DEL TIEMPO
-===================================================== */
 
 function createTimeline() {
 
@@ -1026,10 +967,6 @@ function createTimeline() {
 
 }
 
-
-/* =====================================================
-   ACTUALIZAR LÍNEA DEL TIEMPO
-===================================================== */
 
 function updateTimeline() {
 
@@ -1086,10 +1023,6 @@ function updateTimeline() {
 }
 
 
-/* =====================================================
-   MOSTRAR ETAPA
-===================================================== */
-
 function showStage() {
 
     const stage =
@@ -1099,8 +1032,6 @@ function showStage() {
     hasAnswered =
         false;
 
-
-    /* INFORMACIÓN */
 
     stageNumber.textContent =
         `Etapa ${currentStage + 1} de ${stages.length}`;
@@ -1114,13 +1045,9 @@ function showStage() {
         stage.info;
 
 
-    /* PREGUNTA */
-
     question.textContent =
         stage.question;
 
-
-    /* RESPUESTAS */
 
     answers.innerHTML = "";
 
@@ -1171,10 +1098,6 @@ function showStage() {
 
 }
 
-
-/* =====================================================
-   COMPROBAR RESPUESTA
-===================================================== */
 
 function checkAnswer(selected) {
 
@@ -1276,10 +1199,6 @@ function checkAnswer(selected) {
 }
 
 
-/* =====================================================
-   SIGUIENTE ETAPA
-===================================================== */
-
 function goToNextStage() {
 
     currentStage++;
@@ -1311,10 +1230,6 @@ function goToNextStage() {
 
 }
 
-
-/* =====================================================
-   RESULTADO
-===================================================== */
 
 function showResult() {
 
@@ -1364,10 +1279,6 @@ function showResult() {
 }
 
 
-/* =====================================================
-   REINICIAR
-===================================================== */
-
 function restartGame() {
 
     currentStage =
@@ -1406,10 +1317,6 @@ function restartGame() {
 }
 
 
-/* =====================================================
-   BOTONES
-===================================================== */
-
 nextButton.addEventListener(
     "click",
     goToNextStage
@@ -1421,10 +1328,6 @@ restartButton.addEventListener(
     restartGame
 );
 
-
-/* =====================================================
-   INICIAR
-===================================================== */
 
 createTimeline();
 
